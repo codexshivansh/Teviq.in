@@ -1086,7 +1086,7 @@ function BookDemoPage() {
       form.reset();
     } catch (error) {
       setSubmitStatus('error');
-      setSubmitMessage('Something went wrong while sending your request. Please try again or email us at hello@teviq.in.');
+      setSubmitMessage('Something went wrong while sending your request. Please try again or email us at helloteviq@gmail.com.');
     }
   };
 
@@ -1118,7 +1118,7 @@ function BookDemoPage() {
                   <div className="mt-6 grid gap-4 text-sm sm:grid-cols-2">
                     <div>
                       <p className="font-semibold text-zinc-500">Email</p>
-                      <a href="mailto:hello@teviq.in" className="mt-1 block font-bold text-black transition hover:text-indigo">hello@teviq.in</a>
+                      <a href="mailto:helloteviq@gmail.com" className="mt-1 block font-bold text-black transition hover:text-indigo">helloteviq@gmail.com</a>
                     </div>
                     <div>
                       <p className="font-semibold text-zinc-500">Phone</p>
@@ -1216,7 +1216,7 @@ function BookDemoPage() {
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
                   <div>
                     <p className="text-sm font-semibold text-zinc-500">Email</p>
-                    <a href="mailto:hello@teviq.in" className="mt-2 block text-base font-bold text-black transition hover:text-indigo">hello@teviq.in</a>
+                    <a href="mailto:helloteviq@gmail.com" className="mt-2 block text-base font-bold text-black transition hover:text-indigo">helloteviq@gmail.com</a>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-zinc-500">Phone</p>
@@ -1520,7 +1520,7 @@ function Footer() {
             <Link to="/terms" className="transition hover:text-white">Terms of Service</Link>
           </div>
         </div>
-        <div className="mt-10 border-t border-zinc-800 pt-6 text-sm text-zinc-500">© 2025 Teviq AI. Built in India.</div>
+        <div className="mt-10 border-t border-zinc-800 pt-6 text-sm text-zinc-500">© {new Date().getFullYear()} Teviq AI. All rights reserved.</div>
       </div>
     </footer>
   );
