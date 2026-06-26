@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0a0a0a;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.18);
+}
+
+@layer components {
+  .container-shell {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 48px);
+  }
+
+  .section-light {
+    @apply bg-white py-24 md:py-[150px];
+  }
+
+  .section-dark {
+    @apply bg-black py-24 md:py-[150px];
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo;
+  }
+
+  .nav-link {
+    @apply text-[15px] font-medium text-zinc-500 transition duration-150 hover:text-black;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-br from-indigo to-sky px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-px hover:opacity-[0.88] focus:outline-none focus:ring-4 focus:ring-indigo/15;
+  }
+
+  .ghost-button-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-zinc-300 bg-transparent px-6 py-3 text-sm font-semibold text-black transition duration-200 hover:border-black focus:outline-none focus:ring-4 focus:ring-indigo/10;
+  }
+
+  .ghost-button-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-zinc-700 bg-transparent px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:border-white focus:outline-none focus:ring-4 focus:ring-white/10;
+  }
+
+  .outline-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-sm font-semibold text-black transition duration-200 hover:-translate-y-px hover:bg-black hover:text-white focus:outline-none focus:ring-4 focus:ring-black/10;
+  }
+
+  .card-light {
+    @apply rounded-[20px] border border-zinc-100 bg-white shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-cardHover;
+  }
+
+  .card-dark {
+    @apply rounded-[20px] border border-zinc-800 bg-[#111111] transition duration-200 hover:-translate-y-0.5 hover:border-indigo;
+  }
+
+  .icon-box {
+    @apply flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-100 text-indigo;
+  }
+
+  .icon-box-dark {
+    @apply bg-[#1C1C1E] text-indigo;
+  }
+}
