@@ -43,7 +43,7 @@ const stagger = {
 const navLinks = [
   { label: 'Product', href: '/product' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Live Demo', href: '/#live-demo' },
+  { label: 'Live Demo', href: '#live-demo' },
 ];
 
 const siteUrl = 'https://teviq.in';
@@ -511,9 +511,15 @@ function Navbar({ isMenuOpen, setIsMenuOpen, closeMenu }) {
 
         <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
-            <Link key={link.label} to={link.href} className={navClass(link.href)}>
+            link.href.startsWith('#') ? (
+              <a key={link.label} href={link.href} className="nav-link">
                 {link.label}
-            </Link>
+              </a>
+            ) : (
+              <Link key={link.label} to={link.href} className={navClass(link.href)}>
+                {link.label}
+              </Link>
+            )
           ))}
           <div
             ref={resourcesRef}
@@ -563,9 +569,20 @@ function Navbar({ isMenuOpen, setIsMenuOpen, closeMenu }) {
           >
             <div className="rounded-2xl border border-zinc-100 bg-white p-2 shadow-card">
               {navLinks.map((link) => (
-                <Link key={link.label} to={link.href} onClick={closeMenu} className={`block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-zinc-50 hover:text-black ${pathname === link.href ? 'text-black' : 'text-zinc-600'}`}>
-                  {link.label}
-                </Link>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="block rounded-xl px-4 py-3 text-sm font-semibold text-zinc-600 hover:bg-zinc-50 hover:text-black"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.label} to={link.href} onClick={closeMenu} className={`block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-zinc-50 hover:text-black ${pathname === link.href ? 'text-black' : 'text-zinc-600'}`}>
+                    {link.label}
+                  </Link>
+                )
               ))}
               <div className="my-2 h-px bg-zinc-100" />
               <MobileResourceMenu closeMenu={closeMenu} pathname={pathname} />
@@ -654,23 +671,23 @@ function MobileResourceMenu({ closeMenu, pathname }) {
 }
 
 function Hero() {
-  const title = 'AI Customer Support for D2C Brands that Handles Orders, Returns & FAQs Automatically';
+  const title = 'AI Customer Support for D2C Brands';
 
   return (
-    <section id="top" className="bg-white pt-32 md:pt-[150px]">
+    <section id="top" className="bg-white pt-32 md:pt-[140px]">
       <div className="container-shell">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10 xl:gap-14">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center lg:text-left">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 xl:gap-16">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="text-left">
             <motion.p variants={heroItem(0)} className="eyebrow">
               TEVIQ AI
             </motion.p>
-            <motion.h1 variants={heroItem(0.12)} className="mt-7 max-w-[720px] text-balance text-[44px] font-black leading-[0.98] tracking-[-0.045em] text-black sm:text-[56px] md:text-[64px] lg:text-[clamp(64px,6vw,92px)] lg:tracking-[-0.055em]">
+            <motion.h1 variants={heroItem(0.12)} className="mt-6 max-w-[620px] text-balance text-[38px] font-black leading-[1.05] tracking-[-0.035em] text-black sm:text-[48px] md:text-[56px] lg:text-[64px]">
               {title}
             </motion.h1>
-            <motion.p variants={heroItem(0.3)} className="mx-auto mt-8 max-w-xl text-[17px] leading-[1.7] text-zinc-500 lg:mx-0">
-              Teviq helps e-commerce brands reduce repetitive support queries with an AI assistant trained on their policies, products, orders and brand knowledge.
+            <motion.p variants={heroItem(0.3)} className="mt-6 max-w-xl text-[17px] leading-[1.7] text-zinc-500 md:text-[18px]">
+              Automate order tracking, returns, FAQs and more with AI. Reduce support workload and delight your customers 24/7.
             </motion.p>
-            <motion.div variants={heroItem(0.5)} className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+            <motion.div variants={heroItem(0.5)} className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start">
               <Link to="/book-demo" className="primary-button w-full sm:w-auto">
                 Book a Free Demo <FiArrowRight />
               </Link>
@@ -701,7 +718,7 @@ function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div initial="hidden" animate="visible" variants={heroItem(0.35)} className="lg:-mt-8 xl:-mt-10">
+          <motion.div initial="hidden" animate="visible" variants={heroItem(0.35)} className="lg:justify-self-end">
             <ProductDemoFrame />
           </motion.div>
         </div>
