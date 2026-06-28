@@ -22,7 +22,6 @@ import {
   FiSend,
   FiShield,
   FiShoppingBag,
-  FiStar,
   FiX,
   FiZap,
 } from 'react-icons/fi';
@@ -44,15 +43,15 @@ const stagger = {
 const navLinks = [
   { label: 'Product', href: '/product' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Live Demo', href: '/#live-demo' },
 ];
 
 const siteUrl = 'https://teviq.in';
 
 const seoByPath = {
   '/': {
-    title: 'Teviq AI | AI Customer Support for D2C Ecommerce',
-    description: 'Teviq AI is a premium AI customer support platform for D2C ecommerce brands.',
+    title: 'Teviq Support AI – AI Customer Support for D2C Brands',
+    description: 'Automate order tracking, returns, FAQs and customer support for e-commerce brands with Teviq Support AI.',
   },
   '/product': {
     title: 'Product | Teviq Support AI',
@@ -91,43 +90,43 @@ const seoByPath = {
 const productModules = [
   {
     title: 'Order Tracking',
-    subtitle: 'Real-time order status and delivery support',
+    subtitle: 'Help customers check order status without waiting for your team',
     icon: FiBox,
   },
   {
     title: 'Returns & Exchanges',
-    subtitle: 'Automated return and exchange workflows',
+    subtitle: 'Guide customers using your return and exchange rules',
     icon: FiRefreshCw,
   },
   {
-    title: 'FAQs',
-    subtitle: 'Instant answers for common customer questions',
+    title: 'Refund Questions',
+    subtitle: 'Answer refund policy questions without making false promises',
+    icon: FiClock,
+  },
+  {
+    title: 'Shipping & Delivery',
+    subtitle: 'Reduce repetitive delivery-time and shipping-policy tickets',
+    icon: FiGlobe,
+  },
+  {
+    title: 'Product FAQs',
+    subtitle: 'Answer product, ingredient, warranty and usage questions from your knowledge base',
     icon: FiMessageCircle,
   },
   {
-    title: 'Product Recommendations',
-    subtitle: 'Relevant product suggestions from your catalog',
-    icon: FiShoppingBag,
-  },
-  {
-    title: 'WhatsApp Support',
-    subtitle: 'Support automation across WhatsApp',
-    icon: FiSend,
-  },
-  {
-    title: 'Human Handoff',
-    subtitle: 'Escalate sensitive or complex issues to your team',
+    title: 'Size / Warranty Help',
+    subtitle: 'Guide shoppers before purchase and after delivery',
     icon: FiHelpCircle,
   },
   {
-    title: 'Analytics',
-    subtitle: 'Customer insights and support performance',
-    icon: FiBarChart2,
+    title: 'Human Escalation',
+    subtitle: 'Route sensitive complaints to your team instead of letting AI guess',
+    icon: FiAlertTriangle,
   },
   {
-    title: 'Custom Knowledge Base',
-    subtitle: 'Brand policies, product rules, and support tone in one place',
-    icon: FiFileText,
+    title: 'Product Recommendations',
+    subtitle: 'Help shoppers find relevant products using catalog context',
+    icon: FiShoppingBag,
   },
 ];
 
@@ -140,19 +139,19 @@ const resourceNavItems = [
 
 const caseStudyResults = [
   {
-    title: 'Faster customer replies',
-    metric: '40%+',
-    body: 'Support response time reduced with AI-powered instant answers.',
+    title: 'Instant answers',
+    metric: '24/7',
+    body: 'Designed to answer common support questions even when your team is offline.',
   },
   {
-    title: 'More conversations handled',
-    metric: '6 lakh+',
-    body: 'Customer conversations handled across product, order, FAQ, and support journeys.',
+    title: 'Less repetitive work',
+    metric: '50–80%',
+    body: 'Can help automate a large share of repetitive order, return, shipping and FAQ queries.',
   },
   {
-    title: 'Built for growing D2C teams',
-    metric: '200+',
-    body: 'Designed for brands that want support automation without losing customer experience.',
+    title: 'Faster resolution',
+    metric: '1 flow',
+    body: 'Order tracking, return checks, knowledge answers and human escalation in one support layer.',
   },
 ];
 
@@ -162,105 +161,125 @@ const platformCards = [
     badgeStyle: 'bg-[#DCFCE7] text-[#16A34A]',
     icon: FiMessageCircle,
     title: 'Teviq Support AI',
-    body: 'AI customer support for D2C ecommerce brands. Order tracking, returns, cancellations - handled.',
+    body: 'AI customer support for D2C ecommerce brands. Orders, returns, FAQs, product questions and escalation - handled with brand context.',
     note: 'Our current focus',
   },
   {
-    badge: 'Coming Soon',
+    badge: 'Roadmap',
     badgeStyle: 'bg-[#DBEAFE] text-[#1D4ED8]',
     icon: FiBarChart2,
-    title: 'Teviq Analytics',
-    body: 'Your personal AI business analyst. Weekly ROAS clarity, restock alerts, abandoned cart recovery - delivered to WhatsApp every Monday.',
+    title: 'Deeper Analytics',
+    body: 'Resolution trends, unresolved questions, support workload insights and FAQ suggestions as brands scale.',
   },
   {
-    badge: 'In the Works',
+    badge: 'Roadmap',
     badgeStyle: 'bg-[#EDE9FE] text-[#6D28D9]',
     icon: FiHome,
-    title: 'More Ecommerce Modules',
-    body: 'Beauty. Skincare. Electronics. Jewellery. Footwear. Lifestyle. Teviq is building AI support infrastructure for ambitious D2C categories.',
+    title: 'Future Channels',
+    body: 'Website widget today, with WhatsApp and more commerce channels planned through the same support brain.',
   },
 ];
 
 const painCards = [
   {
     icon: FiMessageCircle,
-    title: 'Repetitive questions, every day',
-    body: "Where's my order? Can I return this? What's your exchange policy? - the same 10 questions, answered manually, again and again.",
+    title: 'Customers ask the same questions every day',
+    body: "Where is my order? Can I return this? Is COD available? Your team answers the same support tickets again and again.",
   },
   {
     icon: FiClock,
-    title: 'Delayed replies = lost trust',
-    body: "Every unanswered message is a customer who won't order again. Small brands lose customers not on price - but on response time.",
+    title: 'Support teams lose hours on routine queries',
+    body: 'Order status, returns, refunds and shipping updates take time away from growth, product and customer recovery.',
   },
   {
     icon: FiRefreshCw,
-    title: 'Returns mishandled = bad reviews',
-    body: "Telling a customer they can return an item that hasn't been delivered yet isn't just wrong - it's expensive.",
+    title: 'Policy mistakes create angry customers',
+    body: 'Manual replies can accidentally promise refunds or returns before checking order status and brand policy.',
+  },
+  {
+    icon: FiShoppingBag,
+    title: 'Slow replies cost sales',
+    body: 'A shopper waiting for a size, warranty or delivery answer may leave the site before your team responds.',
+  },
+  {
+    icon: FiBarChart2,
+    title: 'Manual support does not scale',
+    body: 'Peak hours, sale days and ad campaigns create support spikes that small teams cannot handle manually.',
   },
 ];
 
 const features = [
   {
     icon: FiBox,
-    title: 'Real-Time Order Tracking',
-    body: 'Customer types their Order ID - Teviq fetches live status instantly. Shipped, out for delivery, delivered - accurate every time.',
+    title: 'Order Tracking',
+    body: 'Customers can ask for order status and get a clear next step instead of waiting for a manual reply.',
   },
   {
     icon: FiRefreshCw,
-    title: 'Return & Cancellation - Handled',
-    body: 'Bot checks if the order is actually delivered before confirming return eligibility. No false promises. No angry customers.',
+    title: 'Returns & Exchanges',
+    body: 'Teviq checks your policy and order context before guiding a customer through return or exchange questions.',
   },
   {
-    icon: FiAlertTriangle,
-    title: 'Fraud & Abuse Auto-Escalation',
-    body: 'Sensitive complaints never reach the AI. Teviq detects abuse keywords and instantly routes to your WhatsApp - serious issues get human attention.',
+    icon: FiClock,
+    title: 'Refund Questions',
+    body: 'Customers get policy-aware refund guidance without the AI inventing refund dates or confirmations.',
   },
   {
     icon: FiGlobe,
-    title: 'Hinglish Auto-Detection',
-    body: 'Your customers switch between Hindi and English mid-sentence. Teviq does too - automatically, naturally, without any setup.',
+    title: 'Shipping & Delivery',
+    body: 'Reduce repetitive delivery-time, shipping-fee, COD and dispatch questions with instant answers.',
   },
   {
-    icon: FiZap,
-    title: 'Zero Downtime - Dual AI Engine',
-    body: 'Powered by Gemini with Groq as instant fallback. If one goes down, the other activates in milliseconds. Your support never goes offline.',
+    icon: FiFileText,
+    title: 'Product FAQs',
+    body: 'Train Teviq on policies, PDFs, FAQs and product knowledge so customers get brand-specific answers.',
+  },
+  {
+    icon: FiHelpCircle,
+    title: 'Size / Warranty Help',
+    body: 'Answer category-specific questions like size fit, ingredients, warranty, usage and product care.',
+  },
+  {
+    icon: FiAlertTriangle,
+    title: 'Human Escalation',
+    body: 'Fraud, legal, abuse and sensitive complaints bypass AI and move toward human support.',
   },
   {
     icon: FiShoppingBag,
-    title: 'Product Suggestions Built In',
-    body: 'Customer asks for a product under Rs. 800 in size M? Teviq filters your catalog and suggests the top 3 - right inside the chat.',
+    title: 'Product Recommendations',
+    body: 'Guide shoppers toward relevant products using catalog context and support conversation intent.',
   },
 ];
 
 const comparisonRows = [
-  ['Live order data', 'no', 'limited', 'yes'],
+  ['Brand-specific policies', 'no', 'limited', 'yes'],
+  ['Order-aware replies', 'no', 'limited', 'yes'],
   ['Return logic check', 'no', 'no', 'yes'],
-  ['Hinglish support', 'no', 'no', 'yes'],
-  ['Dual AI fallback', 'no', 'no', 'yes'],
-  ['Fraud escalation', 'no', 'no', 'yes'],
-  ['Flat pricing', 'yes', 'no', 'yes'],
+  ['Knowledge uploads', 'no', 'limited', 'yes'],
+  ['Human escalation rules', 'no', 'limited', 'yes'],
+  ['Founder-friendly pricing', 'yes', 'no', 'yes'],
   ['India-built', 'no', 'no', 'yes'],
 ];
 
 const pricing = [
   {
     name: 'Standard',
-    setupLabel: 'Setup',
-    setup: '₹3,999 (One-time)',
+    setupLabel: 'Pilot setup',
+    setup: 'Free for first pilot brands',
     monthly: '₹999/month',
-    features: ['AI customer support agent', 'Website integration', 'Product catalog training', 'Order tracking responses', 'Returns & exchange responses', 'FAQ automation'],
+    features: ['Website AI support widget', 'Brand policy and FAQ training', 'Order tracking responses', 'Returns & exchange guidance', 'Product FAQ automation', '14-day pilot available'],
     cta: 'Book a Free Demo',
   },
   {
-    name: 'Partner',
-    tag: 'For Stravio Media Clients',
-    description: "This plan is exclusively available for brands that purchase a marketing package through Stravio Media. The AI product is exactly the same as the Starter plan. The only difference is the discounted setup fee because onboarding is completed alongside your marketing implementation.",
-    setupLabel: 'Setup',
-    setup: '₹1,499 (One-time)',
-    monthly: '₹999/month',
-    features: ['Same Teviq Support AI platform', 'AI chatbot setup', 'Website integration', 'Product catalog training', 'Order tracking responses', 'Returns & exchange responses'],
+    name: 'Growth Roadmap',
+    tag: 'Website + WhatsApp-ready roadmap',
+    description: 'For brands that want website support now and want their support flow prepared for WhatsApp integration as Teviq expands channels.',
+    setupLabel: 'Pilot setup',
+    setup: 'Free for first pilot brands',
+    monthly: '₹1,499/month',
+    features: ['Everything in Website AI Support', 'WhatsApp integration roadmap readiness', 'Knowledge Brain setup support', 'Shopify-style connector demo', 'Analytics preview', 'Priority pilot onboarding'],
     cta: 'Get Started',
-    note: 'Exclusive pricing for brands using Stravio Media’s marketing services.',
+    note: 'WhatsApp integration is roadmap positioning, not a live channel claim.',
     highlighted: true,
   },
 ];
@@ -268,61 +287,104 @@ const pricing = [
 const steps = [
   {
     number: '01',
-    title: 'We connect to your store',
-    body: 'Share your Shopify credentials and brand policies. We configure Teviq to your tone, products, and return rules.',
+    title: 'Connect your store or upload policies',
+    body: 'Share product FAQs, return rules, shipping policy and demo commerce data. We shape Teviq around your support flow.',
   },
   {
     number: '02',
-    title: 'One script. Live instantly.',
-    body: 'We embed a single line of code into your theme.liquid - your AI support agent goes live in minutes.',
+    title: 'Teviq learns your brand knowledge',
+    body: 'The support brain uses your policies, FAQs, products, orders and escalation rules before answering customers.',
   },
   {
     number: '03',
-    title: 'Your customers get answers',
-    body: '24/7. Accurate. No human needed. You check in when you want to - not because you have to.',
-  },
-];
-
-const testimonials = [
-  {
-    quote: 'We used to spend 2 hours a day answering the same questions. Now Teviq handles it - we just check in once a week.',
-    name: 'D2C brand founder, Jaipur',
+    title: 'Add the widget to your website',
+    body: 'Install one script on your storefront. The widget loads by brand ID and uses your public brand configuration.',
   },
   {
-    quote: 'The return logic alone saved us from 3 angry customers in the first week. Worth every rupee.',
-    name: 'D2C ethnic wear brand, Delhi',
-  },
-  {
-    quote: 'Setup took 20 minutes. We went live the same day.',
-    name: 'Accessories brand, Mumbai',
+    number: '04',
+    title: 'Customers get instant answers',
+    body: 'Visitors can ask about orders, returns, shipping and products while sensitive cases move toward human support.',
   },
 ];
 
 const faqs = [
   {
     question: 'Do I need technical knowledge to set up Teviq?',
-    answer: 'No. We handle the entire setup - you just share access. Most brands go live within 48 hours.',
+    answer: 'No. We help pilot brands with setup, widget installation and knowledge configuration. You mainly share policies, FAQs and support rules.',
   },
   {
     question: "What happens if the AI doesn't know the answer?",
-    answer: "Teviq is trained on your brand's specific policies. Out-of-scope questions are gracefully declined or escalated to you on WhatsApp.",
+    answer: "Teviq uses your brand knowledge and policy rules. If confidence is low or the issue is sensitive, it responds carefully and can guide the customer toward human support.",
   },
   {
     question: 'Will it work with my existing Shopify theme?',
-    answer: 'Yes. Teviq embeds via a single script tag - compatible with all Shopify themes, no coding required from your side.',
+    answer: 'The website widget is embedded with one script tag and is designed for storefronts. The current Shopify connector is a demo architecture, with real Shopify integration planned next.',
   },
   {
-    question: 'What if Gemini goes down?',
-    answer: 'Teviq runs on a dual AI engine - Gemini primary, Groq as instant fallback. Your customers never experience downtime.',
+    question: 'Can Teviq answer in Hinglish?',
+    answer: 'Yes. The support brain detects English, Hindi and Hinglish-style messages and keeps replies short and brand-toned.',
   },
   {
-    question: 'Is there a free trial?',
-    answer: 'Yes - we offer a 2-week free trial for select brands. Book a demo to check eligibility.',
+    question: 'Is there a pilot available?',
+    answer: 'Yes. We are offering a 14-day pilot and free setup for selected early D2C brands.',
   },
   {
-    question: 'Can it handle Hindi and English both?',
-    answer: "Automatically. Teviq detects Hinglish mid-conversation and matches the customer's language without any setup.",
+    question: 'Can I update policies later?',
+    answer: 'Yes. Brand knowledge is designed to be updated as your return rules, shipping rules, FAQs and products change.',
   },
+];
+
+const roiMetrics = [
+  {
+    value: '24/7',
+    title: 'Instant replies',
+    body: 'Designed to answer common questions when shoppers need help, not only when your team is online.',
+  },
+  {
+    value: '50–80%',
+    title: 'Repetitive query automation',
+    body: 'Can help reduce the workload from repeated order, return, shipping and FAQ questions.',
+  },
+  {
+    value: 'Faster',
+    title: 'Order, return and FAQ resolution',
+    body: 'Gives customers the next best step without waiting for a manual support reply.',
+  },
+];
+
+const dashboardPreview = [
+  ['Knowledge uploads', 'Upload PDFs, policies, FAQs and brand rules.'],
+  ['AI playground', 'Test answers before customers see them.'],
+  ['Shopify status', 'Preview product and order connector readiness.'],
+  ['Analytics', 'Track intents, escalations and unresolved questions.'],
+  ['Widget install', 'Copy the one-script storefront embed.'],
+  ['Conversations', 'Review demo support history and handoff status.'],
+];
+
+const demoOptions = [
+  {
+    title: 'Fashion Demo',
+    body: 'Try order tracking, returns, size help and exchange flows.',
+    href: 'https://teviq-support-ai-widget.vercel.app/demo-vastra.html',
+  },
+  {
+    title: 'Electronics Demo',
+    body: 'Try warranty, shipping, product help and support escalation.',
+    href: 'https://teviq-support-ai-widget.vercel.app/demo-urban.html',
+  },
+  {
+    title: 'Beauty Demo',
+    body: 'Try ingredients, usage, product FAQs and delivery questions.',
+    href: 'https://teviq-support-ai-widget.vercel.app/demo-beauty.html',
+  },
+];
+
+const trustPoints = [
+  'Brand-isolated knowledge and widget configuration',
+  'HTTPS APIs for production deployments',
+  'Order and knowledge retrieval filtered by brand ID',
+  'Human escalation for fraud, legal, abuse and sensitive issues',
+  'Policies, FAQs and knowledge can be updated anytime',
 ];
 
 function App() {
@@ -368,6 +430,14 @@ function SiteShell() {
     setMeta('meta[name="twitter:description"]', 'content', seo.description);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      window.requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+  }, [pathname]);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -397,9 +467,14 @@ function HomePage({ openFaq, setOpenFaq }) {
       <Platform />
       <Pain />
       <Features />
-      <Comparison />
       <HowItWorks />
-      <Testimonials />
+      <ROISection />
+      <DashboardPreview />
+      <LiveDemo />
+      <Pricing />
+      <TrustSafety />
+      <FounderPresence />
+      <Comparison />
       <FAQ openFaq={openFaq} setOpenFaq={setOpenFaq} />
       <FinalCTA />
     </main>
@@ -579,7 +654,7 @@ function MobileResourceMenu({ closeMenu, pathname }) {
 }
 
 function Hero() {
-  const title = 'AI customer support for D2C ecommerce brands.';
+  const title = 'AI Customer Support for D2C Brands that Handles Orders, Returns & FAQs Automatically';
 
   return (
     <section id="top" className="bg-white pt-32 md:pt-[150px]">
@@ -593,23 +668,27 @@ function Hero() {
               {title}
             </motion.h1>
             <motion.p variants={heroItem(0.3)} className="mx-auto mt-8 max-w-xl text-[17px] leading-[1.7] text-zinc-500 lg:mx-0">
-              Teviq is an AI customer support platform for D2C ecommerce brands across beauty, skincare, electronics, jewellery, footwear, lifestyle, home decor, pet brands, supplements, and gifting.
+              Teviq helps e-commerce brands reduce repetitive support queries with an AI assistant trained on their policies, products, orders and brand knowledge.
             </motion.p>
             <motion.div variants={heroItem(0.5)} className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
-              <a href="#features" className="primary-button w-full sm:w-auto">
-                See Our First Product <FiArrowRight />
-              </a>
-              <a href="#platform" className="ghost-button-light w-full sm:w-auto">
-                Our Vision <FiArrowDown />
+              <Link to="/book-demo" className="primary-button w-full sm:w-auto">
+                Book a Free Demo <FiArrowRight />
+              </Link>
+              <a href="#live-demo" className="ghost-button-light w-full sm:w-auto">
+                Try Live Demo <FiArrowDown />
               </a>
             </motion.div>
+
+            <motion.p variants={heroItem(0.62)} className="mt-5 text-sm font-semibold text-zinc-500">
+              Setup in minutes • Website widget • Shopify-ready roadmap • Built for Indian D2C brands
+            </motion.p>
 
             <motion.div variants={heroItem(0.7)} className="mt-12 border-t border-zinc-100 pt-9">
               <div className="grid gap-6 sm:grid-cols-3 sm:gap-0">
                 {[
-                  ['Teviq Support AI', 'Flagship product'],
-                  ['D2C Ecommerce', 'Focused platform'],
-                  ['India-first', 'Built for Bharat'],
+                  ['Orders', 'Track and explain status'],
+                  ['Returns', 'Policy-aware guidance'],
+                  ['FAQs', 'Instant brand answers'],
                 ].map(([value, label], index) => (
                   <div key={value} className={`min-w-0 px-4 text-center lg:px-5 lg:text-left ${index > 0 ? 'sm:border-l sm:border-zinc-200' : ''}`}>
                     <p className="mx-auto max-w-[11rem] text-pretty text-[22px] font-black leading-[1.05] tracking-[-0.04em] text-black sm:text-[18px] md:text-[20px] lg:mx-0 xl:text-[22px]">
@@ -770,8 +849,8 @@ function TrustedBy() {
         <motion.div variants={fadeInUp} className="rounded-[28px] border border-zinc-100 bg-zinc-50/60 px-6 py-8 md:px-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-sm">
-              <p className="eyebrow">TRUSTED BY</p>
-              <p className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-black">Built for high-volume D2C ecommerce teams.</p>
+              <p className="eyebrow">BUILT FOR</p>
+              <p className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-black">Fast-growing ecommerce categories with repeat support questions.</p>
             </div>
             <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {categories.map((category) => (
@@ -804,9 +883,9 @@ function Platform() {
     <section id="platform" className="section-light">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <SectionHeader
-          label="What We're Building"
-          title="The Teviq Platform"
-          subtitle="One platform. Multiple AI support modules. Built for D2C ecommerce brands that need speed, accuracy, and trust at scale."
+          label="More Than A Chatbot"
+          title="A support brain for your store."
+          subtitle="Teviq combines a premium website widget, brand knowledge, order context, policy logic, analytics and a client dashboard into one support system."
         />
         <div className="mt-20 grid gap-6 lg:grid-cols-3">
           {platformCards.map((card) => (
@@ -828,8 +907,13 @@ function Pain() {
   return (
     <section className="section-dark">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-        <SectionHeader label="The Problem" title="Your customers message at 2am. Your support team doesn't." dark />
-        <div className="mt-20 grid gap-6 lg:grid-cols-3">
+        <SectionHeader
+          label="The Problem"
+          title="Support slows down exactly when your store needs speed."
+          subtitle="Founders do not lose time only on tickets. They lose repeat purchases, trust and momentum when routine questions stay unanswered."
+          dark
+        />
+        <div className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
           {painCards.map((card) => (
             <DarkCard key={card.title} className="p-8">
               <IconBox icon={card.icon} dark />
@@ -848,9 +932,9 @@ function Features() {
     <section id="features" className="section-light">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <SectionHeader
-          label="The Solution"
-          title="One AI. Every customer question. Zero human effort."
-          subtitle="Teviq AI connects directly to your Shopify store - and handles support the way a trained team member would."
+          label="What Teviq Handles"
+          title="Your most common support flows, answered with brand context."
+          subtitle="From order status to product questions, Teviq is designed to reduce the repetitive work that keeps founders and support teams busy."
         />
         <div className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
@@ -923,12 +1007,12 @@ function Pricing() {
     <section id="pricing" className="bg-white pb-24 pt-32 md:pb-[150px] md:pt-[150px]">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <SectionHeader
-          label="PRICING"
-          title="No per-conversation traps. No hidden charges. Ever."
-          subtitle="Transparent setup and a simple monthly platform fee."
+          label="Pilot Offer"
+          title="Become one of our first pilot D2C brands."
+          subtitle="We’ll help set up Teviq on your store and customize it for your support flow. Simple pricing, clear pilot terms, no unnecessary enterprise complexity."
         />
         <motion.p variants={fadeInUp} className="mx-auto mt-10 max-w-[700px] text-center text-[15px] leading-6 text-zinc-500">
-          Every new account includes a one-time setup covering AI configuration, product catalog training, website integration, and deployment. After setup, a simple monthly subscription keeps your AI support agent running with ongoing platform updates and maintenance.
+          Free setup is available for selected early pilot brands. The pilot helps you test website AI support on real customer questions before committing long-term.
         </motion.p>
         <div className="mx-auto mt-20 grid max-w-5xl gap-6 lg:grid-cols-2 lg:items-stretch">
           {pricing.map((plan) => (
@@ -1243,7 +1327,7 @@ function ProductPage() {
               Teviq Support AI
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-[17px] leading-[1.7] text-zinc-500">
-              AI Customer Support Platform for D2C Ecommerce Brands
+              Website AI support for orders, returns, FAQs, products and human escalation.
             </p>
           </motion.div>
 
@@ -1348,7 +1432,12 @@ function HowItWorks() {
   return (
     <section id="works" className="section-dark">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-        <SectionHeader label="Setup in 48 Hours" title="You focus on products. We handle the rest." dark />
+        <SectionHeader
+          label="How It Works"
+          title="From brand knowledge to live widget in four clear steps."
+          subtitle="Keep the setup simple: connect or upload what Teviq needs, test the AI, then add one widget script to your storefront."
+          dark
+        />
         <div className="mx-auto mt-20 max-w-4xl">
           {steps.map((step, index) => (
             <motion.div key={step.number} variants={fadeInUp} className={`grid gap-6 py-10 md:grid-cols-[180px_1fr] md:items-center ${index > 0 ? 'border-t border-zinc-800' : ''}`}>
@@ -1365,39 +1454,86 @@ function HowItWorks() {
   );
 }
 
-function CaseStudies() {
-  const results = [
-    {
-      title: 'Faster customer replies',
-      metric: '40%+',
-      body: 'Support response time reduced with AI-powered instant answers.',
-    },
-    {
-      title: 'More conversations handled',
-      metric: '6 lakh+',
-      body: 'Customer conversations handled across product, order, FAQ, and support journeys.',
-    },
-    {
-      title: 'Built for growing D2C teams',
-      metric: '200+',
-      body: 'Designed for brands that want support automation without losing customer experience.',
-    },
-  ];
-
+function ROISection() {
   return (
-    <section id="case-studies" className="section-light">
+    <section className="section-light">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <SectionHeader
-          label="CASE STUDIES"
-          title="Results that feel real, not vanity metrics"
-          subtitle="Show how Teviq helps D2C brands reduce support load, answer faster, and convert more shoppers."
+          label="Business Value"
+          title="Reduce repetitive support workload without making support feel robotic."
+          subtitle="Teviq is designed to automate the common questions customers ask before and after purchase, while keeping sensitive issues ready for human attention."
         />
         <div className="mt-20 grid gap-6 lg:grid-cols-3">
-          {results.map((result) => (
-            <LightCard key={result.title} className="p-8">
-              <p className="text-5xl font-black leading-none tracking-[-0.04em] text-black md:text-6xl">{result.metric}</p>
-              <h3 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{result.title}</h3>
-              <p className="mt-4 text-[17px] leading-[1.7] text-zinc-500">{result.body}</p>
+          {roiMetrics.map((metric) => (
+            <LightCard key={metric.title} className="p-8">
+              <p className="text-5xl font-black leading-none tracking-[-0.04em] text-black md:text-6xl">{metric.value}</p>
+              <h3 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{metric.title}</h3>
+              <p className="mt-4 text-[17px] leading-[1.7] text-zinc-500">{metric.body}</p>
+            </LightCard>
+          ))}
+        </div>
+        <motion.p variants={fadeInUp} className="mx-auto mt-8 max-w-2xl text-center text-sm leading-6 text-zinc-500">
+          Results depend on query volume, policy clarity and setup quality. We keep pilot claims realistic and measurable.
+        </motion.p>
+      </motion.div>
+    </section>
+  );
+}
+
+function DashboardPreview() {
+  return (
+    <section className="section-dark">
+      <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+        <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+          <SectionHeader
+            label="Brand Dashboard"
+            title="More than a chat widget. A support command center."
+            subtitle="Brands can manage knowledge, test AI answers, preview Shopify-style sync, see analytics and copy the widget install script from one dashboard."
+            dark
+          />
+          <motion.div variants={fadeInUp} className="rounded-[28px] border border-zinc-800 bg-[#111111] p-4 shadow-demo">
+            <div className="rounded-[22px] border border-zinc-800 bg-black p-4">
+              <div className="mb-4 flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">Teviq Admin</p>
+                  <p className="mt-1 text-lg font-bold tracking-[-0.02em] text-white">Support setup progress</p>
+                </div>
+                <span className="rounded-full bg-[#DCFCE7] px-3 py-1 text-xs font-bold text-[#16A34A]">Ready</span>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {dashboardPreview.map(([title, body]) => (
+                  <div key={title} className="rounded-2xl border border-zinc-800 bg-white/[0.04] p-4">
+                    <p className="text-sm font-bold text-white">{title}</p>
+                    <p className="mt-2 text-xs leading-5 text-zinc-500">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+function LiveDemo() {
+  return (
+    <section id="live-demo" className="section-light">
+      <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+        <SectionHeader
+          label="Live Demo"
+          title="Try Teviq on three demo storefronts."
+          subtitle="Use the demos to test common D2C flows like order tracking, returns, product questions, shipping and human escalation."
+        />
+        <div className="mt-20 grid gap-6 lg:grid-cols-3">
+          {demoOptions.map((demo) => (
+            <LightCard key={demo.title} className="flex min-h-[280px] flex-col p-8">
+              <IconBox icon={FiShoppingBag} />
+              <h3 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{demo.title}</h3>
+              <p className="mt-4 grow text-[17px] leading-[1.7] text-zinc-500">{demo.body}</p>
+              <a href={demo.href} target="_blank" rel="noreferrer" className="outline-button mt-8 w-full">
+                Try Demo <FiArrowRight />
+              </a>
             </LightCard>
           ))}
         </div>
@@ -1406,21 +1542,89 @@ function CaseStudies() {
   );
 }
 
-function Testimonials() {
+function TrustSafety() {
   return (
     <section className="section-light">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-        <SectionHeader label="What Brands Say" title="Early brands. Real results." />
+        <div className="rounded-[28px] border border-zinc-100 bg-zinc-50/70 p-6 md:p-10">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <motion.div variants={fadeInUp}>
+              <p className="eyebrow">Trust & Safety</p>
+              <h2 className="mt-5 text-balance text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-black sm:text-5xl">
+                Built to answer carefully, not creatively.
+              </h2>
+              <p className="mt-6 text-[17px] leading-[1.7] text-zinc-500">
+                Support automation should follow brand policy. Teviq keeps brand data scoped, avoids invented order or refund claims, and escalates sensitive issues.
+              </p>
+            </motion.div>
+            <motion.div variants={stagger} className="grid gap-3">
+              {trustPoints.map((point) => (
+                <motion.div key={point} variants={fadeInUp} className="flex gap-3 rounded-2xl border border-zinc-100 bg-white p-4 shadow-sm">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#DCFCE7] text-[#16A34A]">
+                    <FiCheck className="h-4 w-4" />
+                  </span>
+                  <p className="text-sm font-semibold leading-6 text-zinc-700">{point}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+function FounderPresence() {
+  return (
+    <section className="bg-white pb-24 md:pb-[120px]">
+      <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+        <motion.div variants={fadeInUp} className="rounded-[28px] border border-zinc-100 bg-white p-8 text-center shadow-card md:p-10">
+          <p className="eyebrow">Founder Note</p>
+          <h2 className="mx-auto mt-5 max-w-3xl text-balance text-[30px] font-extrabold leading-[1.15] tracking-[-0.03em] text-black sm:text-4xl">
+            Built by Shivansh Gupta and team at Teviq AI for fast-growing Indian D2C brands.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-zinc-500">
+            We are onboarding early pilot brands personally, helping them set up the support widget, brand knowledge and demo flows for their storefront.
+          </p>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+
+function CaseStudies() {
+  const results = [
+    {
+      title: 'Instant customer replies',
+      metric: '24/7',
+      body: 'Designed to answer common ecommerce support questions whenever shoppers ask.',
+    },
+    {
+      title: 'Less manual workload',
+      metric: '50–80%',
+      body: 'Can help automate a meaningful share of repetitive order, return, refund and FAQ queries.',
+    },
+    {
+      title: 'Pilot-first setup',
+      metric: '14 days',
+      body: 'Early brands can test Teviq on their support flow before making a larger rollout decision.',
+    },
+  ];
+
+  return (
+    <section id="case-studies" className="section-light">
+      <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+        <SectionHeader
+          label="PILOT OUTCOMES"
+          title="What we measure during a pilot."
+          subtitle="We are not publishing client case studies yet. During pilots, we focus on support workload, response speed and unresolved questions."
+        />
         <div className="mt-20 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <LightCard key={testimonial.name} className="p-8">
-              <div className="flex gap-1 text-indigo">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <FiStar key={index} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="mt-8 text-[17px] font-medium leading-[1.7] text-zinc-700">"{testimonial.quote}"</p>
-              <p className="mt-8 text-sm font-bold text-black">{testimonial.name}</p>
+          {results.map((result) => (
+            <LightCard key={result.title} className="p-8">
+              <p className="text-5xl font-black leading-none tracking-[-0.04em] text-black md:text-6xl">{result.metric}</p>
+              <h3 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{result.title}</h3>
+              <p className="mt-4 text-[17px] leading-[1.7] text-zinc-500">{result.body}</p>
             </LightCard>
           ))}
         </div>
@@ -1473,17 +1677,17 @@ function FinalCTA() {
     <section id="demo" className="section-dark">
       <motion.div className="container-shell text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <motion.h2 variants={fadeInUp} className="mx-auto max-w-4xl text-balance text-[36px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl lg:text-[64px]">
-          Ready to stop answering the same questions every day?
+          Want Teviq running on your store this week?
         </motion.h2>
         <motion.p variants={fadeInUp} className="mx-auto mt-6 max-w-xl text-[17px] leading-[1.7] text-zinc-400">
-          Book a 15-minute demo - we'll show you Teviq live on a real Shopify store. No commitment. No credit card.
+          Book a free demo and we’ll show how Teviq can answer your store’s common order, return, shipping and FAQ questions.
         </motion.p>
         <motion.div variants={fadeInUp} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <Link to="/book-demo" className="primary-button">
             Book a Free Demo <FiArrowRight />
           </Link>
           <a href="https://wa.me/919555144436" className="ghost-button-dark">
-            WhatsApp Us Instead <FiArrowRight />
+            WhatsApp Us <FiArrowRight />
           </a>
         </motion.div>
         <motion.div variants={fadeInUp} className="mt-12 flex flex-col items-center justify-center gap-3 text-sm font-medium text-zinc-400 sm:flex-row sm:gap-8">
@@ -1508,7 +1712,7 @@ function Footer() {
               <BrandLogo variant="dark" className="h-9 md:h-11" />
             </Link>
             <p className="mt-4 text-sm text-zinc-400">AI customer support for D2C ecommerce brands.</p>
-            <p className="mt-5 text-sm text-zinc-500">Teviq Support AI · Order Tracking · Returns & Exchanges · WhatsApp AI · Analytics</p>
+            <p className="mt-5 text-sm text-zinc-500">Teviq Support AI · Order Tracking · Returns & Exchanges · Knowledge Brain · Analytics</p>
           </div>
           <div className="flex flex-wrap gap-5 text-sm font-medium text-zinc-400">
             <Link to="/product" className="transition hover:text-white">Product</Link>
