@@ -728,18 +728,10 @@ function Hero() {
 }
 
 function ProductDemoFrame() {
-  const [videoFailed, setVideoFailed] = useState(false);
-
   return (
     <div className="relative mx-auto w-full max-w-[720px] lg:max-w-[750px] xl:max-w-[760px]">
       <div className="relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/15 bg-black shadow-demo">
-        {!videoFailed && (
-          <video className="h-full w-full object-cover" autoPlay muted loop playsInline onError={() => setVideoFailed(true)}>
-            <source src="/videos/chatbot-demo.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        {videoFailed && <DemoFallback />}
+        <DemoFallback />
 
         <div className="absolute inset-0 bg-black/25" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
