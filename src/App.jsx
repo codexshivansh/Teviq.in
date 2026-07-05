@@ -744,7 +744,7 @@ function ProductDemoFrame() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/55">Live AI support layer</p>
           <p className="mt-2 text-xl font-bold tracking-[-0.03em] text-white">Ecommerce support, handled in seconds.</p>
         </div>
-        <ChatbotOverlay />
+        {/* <ChatbotOverlay />  */}
       </div>
     </div>
   );
