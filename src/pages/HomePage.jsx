@@ -1,12 +1,8 @@
 import Hero from '../components/Hero';
 import TrustedBy from '../components/TrustedBy';
-import Platform from '../components/Platform';
-import Pain from '../components/Pain';
-import Features from '../components/Features';
+import ProblemSolution from '../components/ProblemSolution';
 import HowItWorks from '../components/HowItWorks';
-import ROISection from '../components/ROISection';
-import DashboardPreview from '../components/DashboardPreview';
-import LiveDemo from '../components/LiveDemo';
+import SeeItWorking from '../components/SeeItWorking';
 import Pricing from '../components/Pricing';
 import TrustSafety from '../components/TrustSafety';
 import FounderPresence from '../components/FounderPresence';
@@ -19,13 +15,9 @@ function HomePage({ openFaq, setOpenFaq }) {
     <main>
       <Hero />
       <TrustedBy />
-      <Platform />
-      <Pain />
-      <Features />
+      <ProblemSolution />
       <HowItWorks />
-      <ROISection />
-      <DashboardPreview />
-      <LiveDemo />
+      <SeeItWorking />
       <Pricing />
       <TrustSafety />
       <FounderPresence />

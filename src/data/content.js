@@ -11,6 +11,8 @@ import {
   FiRefreshCw,
   FiShield,
   FiShoppingBag,
+  FiTag,
+  FiZap,
 } from 'react-icons/fi';
 
 export const navLinks = [
@@ -216,26 +218,37 @@ export const comparisonRows = [
   ['India-built', 'no', 'no', 'yes'],
 ];
 
-export const pricing = [
+export const foundingOffer = {
+  badge: 'Limited to our first 10 clients',
+  monthly: '₹999/month',
+  highlights: [
+    { icon: FiTag, label: 'No setup fees' },
+    { icon: FiClock, label: '7-day free trial' },
+    { icon: FiZap, label: 'Live in under 15 minutes' },
+  ],
+  features: [
+    'Website AI support widget',
+    'Brand policy and FAQ training',
+    'Order tracking responses',
+    'Returns & exchange guidance',
+    'Product FAQ automation',
+    'Direct founder onboarding support',
+  ],
+  cta: 'Claim Founding Price',
+  note: 'After our first 10 founding clients, pricing moves to the standard plans below.',
+};
+
+export const futurePricingTiers = [
   {
     name: 'Standard',
-    setupLabel: 'Pilot setup',
-    setup: 'Free for first pilot brands',
-    monthly: '₹999/month',
-    features: ['Website AI support widget', 'Brand policy and FAQ training', 'Order tracking responses', 'Returns & exchange guidance', 'Product FAQ automation', '14-day pilot available'],
-    cta: 'Book a Free Demo',
+    monthly: '₹1,999/month',
+    description: 'Website AI support, order tracking, returns and FAQ automation.',
   },
   {
-    name: 'Growth Roadmap',
-    tag: 'Website + WhatsApp-ready roadmap',
-    description: 'For brands that want website support now and want their support flow prepared for WhatsApp integration as Teviq expands channels.',
-    setupLabel: 'Pilot setup',
-    setup: 'Free for first pilot brands',
-    monthly: '₹1,499/month',
-    features: ['Everything in Website AI Support', 'WhatsApp integration roadmap readiness', 'Knowledge Brain setup support', 'Shopify-style connector demo', 'Analytics preview', 'Priority pilot onboarding'],
-    cta: 'Get Started',
+    name: 'Growth',
+    monthly: '₹2,999/month',
+    description: 'Everything in Standard, plus WhatsApp-ready roadmap and priority onboarding.',
     note: 'WhatsApp integration is roadmap positioning, not a live channel claim.',
-    highlighted: true,
   },
 ];
 
@@ -281,7 +294,7 @@ export const faqs = [
   },
   {
     question: 'Is there a pilot available?',
-    answer: 'Yes. We are offering a 14-day pilot and free setup for selected early D2C brands.',
+    answer: 'Yes. We are offering a 7-day free trial and no setup fees for our first 10 founding D2C brands.',
   },
   {
     question: 'Can I update policies later?',

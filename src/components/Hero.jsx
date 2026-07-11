@@ -7,20 +7,20 @@ function Hero() {
   const title = 'AI Customer Support for D2C Brands';
 
   return (
-    <section id="top" className="bg-white pt-32 md:pt-[140px]">
+    <section id="top" className="bg-white pt-36 md:pt-[170px]">
       <div className="container-shell">
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 xl:gap-16">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="text-left">
             <motion.p variants={heroItem(0)} className="eyebrow">
               TEVIQ AI
             </motion.p>
-            <motion.h1 variants={heroItem(0.12)} className="mt-6 max-w-[620px] text-balance text-[38px] font-black leading-[1.05] tracking-[-0.035em] text-black sm:text-[48px] md:text-[56px] lg:text-[64px]">
+            <motion.h1 variants={heroItem(0.12)} className="mt-7 max-w-[680px] text-balance text-[44px] font-black leading-[1.02] tracking-[-0.04em] text-black sm:text-[56px] md:text-[68px] lg:text-[76px] xl:text-[84px]">
               {title}
             </motion.h1>
-            <motion.p variants={heroItem(0.3)} className="mt-6 max-w-xl text-[17px] leading-[1.7] text-zinc-500 md:text-[18px]">
+            <motion.p variants={heroItem(0.3)} className="mt-8 max-w-xl text-[18px] leading-[1.7] text-zinc-500 md:text-[19px]">
               Automate order tracking, returns, FAQs and more with AI. Reduce support workload and delight your customers 24/7.
             </motion.p>
-            <motion.div variants={heroItem(0.5)} className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start">
+            <motion.div variants={heroItem(0.5)} className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start">
               <Link to="/book-demo" className="primary-button w-full sm:w-auto">
                 Book a Free Demo <FiArrowRight />
               </Link>
