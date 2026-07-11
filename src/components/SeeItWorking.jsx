@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
-import { roiMetrics, dashboardPreview, demoOptions } from '../data/content';
+import { roiMetrics, dashboardPreview } from '../data/content';
 import SectionHeader from './ui/SectionHeader';
 
 function SeeItWorking() {
   return (
-    <section id="live-demo" className="section-dark">
+    <section className="section-dark">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={stagger}>
         <SectionHeader
           label="See It Working"
           title="More than a chat widget — a support system, live."
-          subtitle="The impact founders can expect, the dashboard behind it, and three demo storefronts you can try right now."
+          subtitle="The impact founders can expect, and the dashboard behind it."
           dark
         />
 
@@ -45,14 +46,9 @@ function SeeItWorking() {
         </motion.div>
 
         <motion.div variants={fadeInUp} className="mt-16 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">Try It Yourself</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            {demoOptions.map((demo) => (
-              <a key={demo.title} href={demo.href} target="_blank" rel="noreferrer" className="ghost-button-dark">
-                {demo.title} <FiArrowRight />
-              </a>
-            ))}
-          </div>
+          <Link to="/live-demo" className="ghost-button-dark">
+            Try It Yourself on 3 Demo Storefronts <FiArrowRight />
+          </Link>
         </motion.div>
       </motion.div>
     </section>

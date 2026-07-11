@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowDown, FiArrowRight, FiMessageCircle, FiSend } from 'react-icons/fi';
+import { FiArrowRight, FiMessageCircle, FiSend } from 'react-icons/fi';
 import { heroItem, stagger } from '../lib/animations';
 
 function Hero() {
@@ -24,9 +24,9 @@ function Hero() {
               <Link to="/book-demo" className="primary-button w-full sm:w-auto">
                 Book a Free Demo <FiArrowRight />
               </Link>
-              <a href="#live-demo" className="ghost-button-light w-full sm:w-auto">
-                Try Live Demo <FiArrowDown />
-              </a>
+              <Link to="/live-demo" className="ghost-button-light w-full sm:w-auto">
+                Try Live Demo <FiArrowRight />
+              </Link>
             </motion.div>
 
             <motion.p variants={heroItem(0.62)} className="mt-5 text-sm font-semibold text-zinc-500">

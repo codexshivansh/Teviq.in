@@ -3,17 +3,21 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { seoByPath, siteUrl } from './data/content';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import ChatGreetingBubble from './components/ChatGreetingBubble';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import PricingPage from './pages/PricingPage';
 import BookDemoPage from './pages/BookDemoPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import LiveDemoPage from './pages/LiveDemoPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 import LegalPage from './pages/LegalPage';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <SiteShell />
     </BrowserRouter>
   );
@@ -54,14 +58,6 @@ function SiteShell() {
     setMeta('meta[name="twitter:description"]', 'content', seo.description);
   }, [pathname]);
 
-  useEffect(() => {
-    if (!window.location.hash) return;
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      window.requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-    }
-  }, [pathname]);
-
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -73,12 +69,14 @@ function SiteShell() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/book-demo" element={<BookDemoPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/live-demo" element={<LiveDemoPage />} />
         <Route path="/privacy" element={<LegalPage type="privacy" />} />
         <Route path="/terms" element={<LegalPage type="terms" />} />
         <Route path="/blog" element={<PlaceholderPage eyebrow="BLOG" title="Insights for AI-led ecommerce support" subtitle="Articles, playbooks, and product thinking from Teviq are coming soon." />} />
         <Route path="/help" element={<PlaceholderPage eyebrow="HELP CENTER" title="Teviq Help Center" subtitle="Setup guides, product support, and implementation resources are coming soon." />} />
       </Routes>
       <Footer />
+      <ChatGreetingBubble />
     </div>
   );
 }

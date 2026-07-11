@@ -18,7 +18,7 @@ import {
 export const navLinks = [
   { label: 'Product', href: '/product' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Live Demo', href: '#live-demo' },
+  { label: 'Live Demo', href: '/live-demo' },
 ];
 
 export const siteUrl = 'https://teviq.in';
@@ -43,6 +43,10 @@ export const seoByPath = {
   '/case-studies': {
     title: 'Case Studies | Teviq AI',
     description: 'See results from Teviq AI customer support automation for growing D2C ecommerce teams.',
+  },
+  '/live-demo': {
+    title: 'Live Demo | Teviq AI',
+    description: 'Try Teviq Support AI on three demo storefronts covering order tracking, returns, and product questions.',
   },
   '/privacy': {
     title: 'Privacy Policy | Teviq AI',
