@@ -52,7 +52,7 @@ function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div initial="hidden" animate="visible" variants={heroItem(0.35)} className="lg:justify-self-end">
+          <motion.div initial="hidden" animate="visible" variants={heroItem(0.35)} className="w-full lg:justify-self-end">
             <HeroPitchReel />
           </motion.div>
         </div>
