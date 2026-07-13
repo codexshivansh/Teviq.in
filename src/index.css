@@ -38,6 +38,13 @@ a {
   background: rgba(99, 102, 241, 0.18);
 }
 
+/* Keep Safari's background-video fallback clean if system autoplay is disabled. */
+.teviq-hero-video::-webkit-media-controls,
+.teviq-hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 @layer components {
   .container-shell {
     width: 100%;

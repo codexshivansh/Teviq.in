@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 // Real product film as the hero background — desktop/tablet only.
 //
@@ -20,31 +20,76 @@ const DESKTOP_QUERY = '(min-width: 768px)';
 
 function HeroCinematicBackground() {
   const videoRef = useRef(null);
-  const [showVideo, setShowVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState(() => (
+    typeof window !== 'undefined' && window.matchMedia(DESKTOP_QUERY).matches
+  ));
+
+  const attachVideo = useCallback((video) => {
+    videoRef.current = video;
+    if (!video) return;
+
+    // Safari checks these properties when the media element first enters the DOM.
+    video.defaultMuted = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+  }, []);
 
   useEffect(() => {
     const mql = window.matchMedia(DESKTOP_QUERY);
     const update = () => setShowVideo(mql.matches);
     update();
-    mql.addEventListener('change', update);
-    return () => mql.removeEventListener('change', update);
+    if (mql.addEventListener) mql.addEventListener('change', update);
+    else mql.addListener(update);
+    return () => {
+      if (mql.removeEventListener) mql.removeEventListener('change', update);
+      else mql.removeListener(update);
+    };
   }, []);
 
   useEffect(() => {
     if (!showVideo) return;
     const video = videoRef.current;
     if (!video) return;
-    video.muted = true;
-    const tryPlay = () => video.play().catch(() => {});
-    tryPlay();
-    // Calling play() the instant the component mounts can silently no-op
-    // in Safari if the element hasn't reached a safe readyState yet —
-    // retry once the browser actually signals it's ready to play.
+    let animationFrame;
+
+    const tryPlay = () => {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+      const playback = video.play();
+      if (playback?.catch) playback.catch(() => {});
+    };
+
+    const playWhenVisible = () => {
+      if (document.visibilityState === 'visible') tryPlay();
+    };
+
+    animationFrame = window.requestAnimationFrame(tryPlay);
     video.addEventListener('loadedmetadata', tryPlay);
+    video.addEventListener('loadeddata', tryPlay);
     video.addEventListener('canplay', tryPlay);
+    window.addEventListener('pageshow', tryPlay);
+    document.addEventListener('visibilitychange', playWhenVisible);
+
+    // Safari can still reject autoplay when the user has disabled it or enabled
+    // Low Power Mode. Retry unobtrusively on the first page interaction.
+    window.addEventListener('pointerdown', tryPlay, { once: true, passive: true });
+    window.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    window.addEventListener('keydown', tryPlay, { once: true });
+
     return () => {
+      window.cancelAnimationFrame(animationFrame);
       video.removeEventListener('loadedmetadata', tryPlay);
+      video.removeEventListener('loadeddata', tryPlay);
       video.removeEventListener('canplay', tryPlay);
+      window.removeEventListener('pageshow', tryPlay);
+      document.removeEventListener('visibilitychange', playWhenVisible);
+      window.removeEventListener('pointerdown', tryPlay);
+      window.removeEventListener('touchstart', tryPlay);
+      window.removeEventListener('keydown', tryPlay);
     };
   }, [showVideo]);
 
@@ -55,17 +100,22 @@ function HeroCinematicBackground() {
       {showVideo && (
         <div className="absolute inset-0">
           <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-contain"
+            ref={attachVideo}
+            className="teviq-hero-video pointer-events-none absolute inset-0 h-full w-full object-contain"
             style={{ objectPosition: 'right center' }}
-            src="/hero-bg.mp4"
             poster="/hero-bg-poster.jpg"
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-          />
+            controls={false}
+            disablePictureInPicture
+            aria-hidden="true"
+            tabIndex={-1}
+          >
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
           <div className="pointer-events-none absolute inset-0" style={{ background: overlayGradient }} />
         </div>
       )}
