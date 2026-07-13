@@ -11,7 +11,7 @@ function Hero() {
     <section id="top" className="relative overflow-hidden bg-black">
       <HeroCinematicBackground />
 
-      <div className="container-shell relative z-10 flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-36">
+      <div className="container-shell relative z-10 flex min-h-[100svh] max-w-[1440px] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-36">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-2xl text-left">
           <motion.p variants={heroItem(0)} className="eyebrow">
             TEVIQ AI
