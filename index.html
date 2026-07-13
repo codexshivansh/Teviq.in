@@ -23,6 +23,11 @@
     <link rel="preconnect" href="https://teviq-support-ai-widget.vercel.app" />
     <link rel="preconnect" href="https://teviq-support-ai-backend.onrender.com" />
     <link rel="preload" as="script" href="https://teviq-support-ai-widget.vercel.app/widget.js" />
+    <!-- Starts the hero video download the moment the HTML is parsed, in parallel
+         with the JS bundle — instead of waiting for React to mount before the
+         <video> tag even exists in the DOM. Skipped on mobile (media query),
+         since mobile never renders the video at all. -->
+    <link rel="preload" as="video" href="/hero-bg.mp4" type="video/mp4" media="(min-width: 768px)" fetchpriority="high" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
