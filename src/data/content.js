@@ -7,6 +7,7 @@ import {
   FiGlobe,
   FiHelpCircle,
   FiHome,
+  FiList,
   FiMessageCircle,
   FiRefreshCw,
   FiShield,
@@ -49,8 +50,32 @@ export const seoByPath = {
     description: 'Try Teviq Support AI on three demo storefronts covering order tracking, returns, and product questions.',
   },
   '/privacy': {
-    title: 'Privacy Policy | Teviq AI',
-    description: 'Learn how Teviq AI handles data, access, and customer support information.',
+    title: 'Customer Data & Privacy Policy | Teviq AI',
+    description: 'Learn how Teviq stores, isolates, retains, and deletes brand and customer support data.',
+  },
+  '/policies': {
+    title: 'Policies & Service Information | Teviq AI',
+    description: 'Review Teviq subscription, refund, privacy, pricing, support, and onboarding policies.',
+  },
+  '/policies/refund-policy': {
+    title: 'Refund Policy | Teviq AI',
+    description: 'Review Teviq free-trial access, paid subscription refunds, and billing-cycle terms.',
+  },
+  '/policies/subscription-cancellation': {
+    title: 'Subscription Cancellation Policy | Teviq AI',
+    description: 'Learn how Teviq subscription cancellation, continued access, and resubscription work.',
+  },
+  '/policies/pricing-and-plans': {
+    title: 'Pricing & Plans Policy | Teviq AI',
+    description: 'Review Teviq early-access pricing, price-lock terms, and planned Growth pricing.',
+  },
+  '/policies/support-response-time': {
+    title: 'Support Response Time | Teviq AI',
+    description: 'Review Teviq support availability, response expectations, and contact details.',
+  },
+  '/policies/setup-and-onboarding': {
+    title: 'Setup & Onboarding | Teviq AI',
+    description: 'Learn what is involved in Teviq setup, widget installation, and store connection.',
   },
   '/terms': {
     title: 'Terms of Service | Teviq AI',
@@ -112,6 +137,7 @@ export const productModules = [
 export const resourceNavItems = [
   { title: 'Blog', subtitle: 'Ideas for AI-led support teams', icon: FiFileText, href: '/blog' },
   { title: 'Help Center', subtitle: 'Guides, setup, and support', icon: FiHelpCircle, href: '/help' },
+  { title: 'Policies', subtitle: 'Billing, data, and service information', icon: FiList, href: '/policies' },
   { title: 'Privacy Policy', subtitle: 'How Teviq handles data', icon: FiShield, href: '/privacy' },
   { title: 'Terms of Service', subtitle: 'Usage terms and service policies', icon: FiShield, href: '/terms' },
 ];
@@ -250,9 +276,9 @@ export const futurePricingTiers = [
   },
   {
     name: 'Growth',
-    monthly: '₹2,999/month',
+    monthly: '₹3,999/month',
     description: 'Everything in Standard, plus WhatsApp-ready roadmap and priority onboarding.',
-    note: 'WhatsApp integration is roadmap positioning, not a live channel claim.',
+    note: 'Founding clients may qualify for the ₹2,999/month upgrade price during their original three-month price-lock period. WhatsApp integration remains on the roadmap.',
   },
 ];
 

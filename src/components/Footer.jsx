@@ -22,6 +22,7 @@ function Footer() {
             <Link to="/pricing" className="transition hover:text-white">Pricing</Link>
             <Link to="/case-studies" className="transition hover:text-white">Case Studies</Link>
             <Link to="/book-demo" className="transition hover:text-white">Demo</Link>
+            <Link to="/policies" className="transition hover:text-white">Policies</Link>
             <Link to="/privacy" className="transition hover:text-white">Privacy Policy</Link>
             <Link to="/terms" className="transition hover:text-white">Terms of Service</Link>
           </div>

@@ -13,6 +13,8 @@ import CaseStudiesPage from './pages/CaseStudiesPage';
 import LiveDemoPage from './pages/LiveDemoPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 import LegalPage from './pages/LegalPage';
+import PoliciesPage from './pages/PoliciesPage';
+import PolicyPage from './pages/PolicyPage';
 
 function App() {
   return (
@@ -70,7 +72,9 @@ function SiteShell() {
         <Route path="/book-demo" element={<BookDemoPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/live-demo" element={<LiveDemoPage />} />
-        <Route path="/privacy" element={<LegalPage type="privacy" />} />
+        <Route path="/policies" element={<PoliciesPage />} />
+        <Route path="/policies/:policySlug" element={<PolicyPage />} />
+        <Route path="/privacy" element={<PolicyPage policySlug="privacy" />} />
         <Route path="/terms" element={<LegalPage type="terms" />} />
         <Route path="/blog" element={<PlaceholderPage eyebrow="BLOG" title="Insights for AI-led ecommerce support" subtitle="Articles, playbooks, and product thinking from Teviq are coming soon." />} />
         <Route path="/help" element={<PlaceholderPage eyebrow="HELP CENTER" title="Teviq Help Center" subtitle="Setup guides, product support, and implementation resources are coming soon." />} />

@@ -25,6 +25,24 @@
     <loc>https://teviq.in/privacy</loc>
   </url>
   <url>
+    <loc>https://teviq.in/policies</loc>
+  </url>
+  <url>
+    <loc>https://teviq.in/policies/refund-policy</loc>
+  </url>
+  <url>
+    <loc>https://teviq.in/policies/subscription-cancellation</loc>
+  </url>
+  <url>
+    <loc>https://teviq.in/policies/pricing-and-plans</loc>
+  </url>
+  <url>
+    <loc>https://teviq.in/policies/support-response-time</loc>
+  </url>
+  <url>
+    <loc>https://teviq.in/policies/setup-and-onboarding</loc>
+  </url>
+  <url>
     <loc>https://teviq.in/terms</loc>
   </url>
 </urlset>
