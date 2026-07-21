@@ -3,10 +3,32 @@ import { FiX } from 'react-icons/fi';
 
 function ChatGreetingBubble() {
   const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
+    if (dismissed) return undefined;
     const showTimer = setTimeout(() => setVisible(true), 2500);
     return () => clearTimeout(showTimer);
+  }, [dismissed]);
+
+  useEffect(() => {
+    const dismissGreeting = () => {
+      setDismissed(true);
+      setVisible(false);
+    };
+
+    const handleWidgetLauncherClick = (event) => {
+      if (!(event.target instanceof Element)) return;
+      if (!event.target.closest('.teviq-chat-button')) return;
+      dismissGreeting();
+    };
+
+    document.addEventListener('click', handleWidgetLauncherClick, true);
+    window.addEventListener('teviq:widget-opened', dismissGreeting);
+    return () => {
+      document.removeEventListener('click', handleWidgetLauncherClick, true);
+      window.removeEventListener('teviq:widget-opened', dismissGreeting);
+    };
   }, []);
 
   useEffect(() => {
@@ -16,6 +38,7 @@ function ChatGreetingBubble() {
   }, [visible]);
 
   const openWidget = () => {
+    setDismissed(true);
     setVisible(false);
     document.querySelector('.teviq-chat-button')?.click();
   };
@@ -40,6 +63,7 @@ function ChatGreetingBubble() {
         tabIndex={visible ? 0 : -1}
         onClick={(event) => {
           event.stopPropagation();
+          setDismissed(true);
           setVisible(false);
         }}
         className="shrink-0 text-zinc-400 transition hover:text-black"
