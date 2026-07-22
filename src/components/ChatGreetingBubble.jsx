@@ -1,9 +1,29 @@
 import { useEffect, useState } from 'react';
 import { FiX } from 'react-icons/fi';
 
+const GREETING_DISMISSED_KEY = 'teviq_chat_greeting_dismissed';
+
+function hasDismissedGreeting() {
+  try {
+    return window.sessionStorage.getItem(GREETING_DISMISSED_KEY) === 'true';
+  } catch (error) {
+    return false;
+  }
+}
+
 function ChatGreetingBubble() {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(hasDismissedGreeting);
+
+  const dismissGreeting = () => {
+    try {
+      window.sessionStorage.setItem(GREETING_DISMISSED_KEY, 'true');
+    } catch (error) {
+      // Session storage can be unavailable in strict privacy modes.
+    }
+    setDismissed(true);
+    setVisible(false);
+  };
 
   useEffect(() => {
     if (dismissed) return undefined;
@@ -12,11 +32,6 @@ function ChatGreetingBubble() {
   }, [dismissed]);
 
   useEffect(() => {
-    const dismissGreeting = () => {
-      setDismissed(true);
-      setVisible(false);
-    };
-
     const handleWidgetLauncherClick = (event) => {
       if (!(event.target instanceof Element)) return;
       if (!event.target.closest('.teviq-chat-button')) return;
@@ -38,8 +53,7 @@ function ChatGreetingBubble() {
   }, [visible]);
 
   const openWidget = () => {
-    setDismissed(true);
-    setVisible(false);
+    dismissGreeting();
     document.querySelector('.teviq-chat-button')?.click();
   };
 
@@ -63,8 +77,7 @@ function ChatGreetingBubble() {
         tabIndex={visible ? 0 : -1}
         onClick={(event) => {
           event.stopPropagation();
-          setDismissed(true);
-          setVisible(false);
+          dismissGreeting();
         }}
         className="shrink-0 text-zinc-400 transition hover:text-black"
       >

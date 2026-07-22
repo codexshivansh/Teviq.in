@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://teviq.in/sitemap.xml
+Sitemap: https://www.teviq.in/sitemap.xml

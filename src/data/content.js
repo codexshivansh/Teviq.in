@@ -22,7 +22,7 @@ export const navLinks = [
   { label: 'Live Demo', href: '/live-demo' },
 ];
 
-export const siteUrl = 'https://teviq.in';
+export const siteUrl = 'https://www.teviq.in';
 
 export const seoByPath = {
   '/': {
@@ -254,7 +254,7 @@ export const foundingOffer = {
   highlights: [
     { icon: FiTag, label: 'No setup fees' },
     { icon: FiClock, label: '7-day free trial' },
-    { icon: FiZap, label: 'Live in under 15 minutes' },
+    { icon: FiZap, label: 'Widget installs in minutes' },
   ],
   features: [
     'Website AI support widget',
@@ -339,9 +339,9 @@ export const roiMetrics = [
     body: 'Designed to answer common questions when shoppers need help, not only when your team is online.',
   },
   {
-    value: '50–80%',
+    value: 'Measured',
     title: 'Repetitive query automation',
-    body: 'Can help reduce the workload from repeated order, return, shipping and FAQ questions.',
+    body: 'Track how much repeated order, return, shipping and FAQ workload Teviq handles during your pilot.',
   },
   {
     value: 'Faster',

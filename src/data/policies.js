@@ -1,4 +1,4 @@
-export const policyLastUpdated = '12 July 2026';
+export const policyLastUpdated = '22 July 2026';
 
 export const publicPolicies = [
   {
@@ -28,7 +28,8 @@ export const publicPolicies = [
     title: 'Customer Data & Privacy Policy',
     summary: 'How Teviq uses, isolates, retains, and deletes brand and customer support data.',
     paragraphs: [
-      "Teviq stores your brand's order data, product catalog, and customer chat history securely to power AI-driven support responses. This data is used only to answer customer queries for your brand and is never shared with third parties or used to train models for other brands. If you cancel your subscription, your data is retained for 30 days (in case you wish to reactivate) and then permanently deleted from our systems. You can request immediate deletion of your data at any time by contacting support.",
+      "Teviq stores brand-scoped product, order, knowledge, and customer chat data only to operate support for that brand. One brand's data is never used to answer another brand's customers.",
+      'Customer chat logs are retained for up to 30 days and removed through a scheduled server-side cleanup. Brand configuration, knowledge, and connected-store data remain available while the workspace is active. You can request deletion or disconnection of workspace data at any time by contacting Teviq support.',
     ],
   },
   {
@@ -60,7 +61,7 @@ export const publicPolicies = [
     title: 'Setup & Onboarding',
     summary: 'What is involved in setup, installation, and connecting store data.',
     paragraphs: [
-      'Getting started with Teviq takes under 15 minutes. After signup, you add a single script tag to your storefront (Shopify or custom website) — our team helps with brand knowledge, policy setup, and initial FAQs during onboarding. Once the script is live, the AI widget can immediately start answering customer questions about orders, returns, shipping, and products. Shopify integration for real-time order and product data can be connected anytime from your dashboard.',
+      'Installing the Teviq widget takes only a few minutes: after signup, you add a single script tag to your Shopify or custom storefront. Full setup time depends on the size and quality of your catalog, policies, FAQs, and support rules. Shopify product and order data can be connected from the dashboard, and answers should be tested in the AI Playground before launch.',
     ],
   },
 ];

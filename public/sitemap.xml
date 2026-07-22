@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://teviq.in/</loc>
+    <loc>https://www.teviq.in/</loc>
   </url>
   <url>
-    <loc>https://teviq.in/product</loc>
+    <loc>https://www.teviq.in/product</loc>
   </url>
   <url>
-    <loc>https://teviq.in/pricing</loc>
+    <loc>https://www.teviq.in/pricing</loc>
   </url>
   <url>
-    <loc>https://teviq.in/book-demo</loc>
+    <loc>https://www.teviq.in/book-demo</loc>
   </url>
   <url>
-    <loc>https://teviq.in/case-studies</loc>
+    <loc>https://www.teviq.in/case-studies</loc>
   </url>
   <url>
-    <loc>https://teviq.in/blog</loc>
+    <loc>https://www.teviq.in/live-demo</loc>
   </url>
   <url>
-    <loc>https://teviq.in/help</loc>
+    <loc>https://www.teviq.in/blog</loc>
   </url>
   <url>
-    <loc>https://teviq.in/privacy</loc>
+    <loc>https://www.teviq.in/help</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies</loc>
+    <loc>https://www.teviq.in/privacy</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies/refund-policy</loc>
+    <loc>https://www.teviq.in/policies</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies/subscription-cancellation</loc>
+    <loc>https://www.teviq.in/policies/refund-policy</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies/pricing-and-plans</loc>
+    <loc>https://www.teviq.in/policies/subscription-cancellation</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies/support-response-time</loc>
+    <loc>https://www.teviq.in/policies/pricing-and-plans</loc>
   </url>
   <url>
-    <loc>https://teviq.in/policies/setup-and-onboarding</loc>
+    <loc>https://www.teviq.in/policies/support-response-time</loc>
   </url>
   <url>
-    <loc>https://teviq.in/terms</loc>
+    <loc>https://www.teviq.in/policies/setup-and-onboarding</loc>
+  </url>
+  <url>
+    <loc>https://www.teviq.in/terms</loc>
   </url>
 </urlset>

@@ -12,7 +12,7 @@ function Pricing() {
         <SectionHeader
           label="Founding Offer"
           title="No setup fees. ₹999/month for our first 10 clients."
-          subtitle="Try Teviq free for 7 days and go live in under 15 minutes — no long onboarding, no setup cost."
+          subtitle="Try Teviq free for 7 days with a quick widget install and guided brand setup — no setup cost."
         />
 
         <motion.div variants={fadeInUp} className="mx-auto mt-16 max-w-xl rounded-[28px] border-2 border-indigo bg-white p-8 shadow-highlight md:p-10">

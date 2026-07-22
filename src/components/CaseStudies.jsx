@@ -12,8 +12,8 @@ function CaseStudies() {
     },
     {
       title: 'Less manual workload',
-      metric: '50–80%',
-      body: 'Can help automate a meaningful share of repetitive order, return, refund and FAQ queries.',
+      metric: 'Measured',
+      body: 'We measure how many repetitive order, return, refund and FAQ queries are handled during each pilot.',
     },
     {
       title: 'Pilot-first setup',
@@ -33,7 +33,7 @@ function CaseStudies() {
         <div className="mt-20 grid gap-6 lg:grid-cols-3">
           {results.map((result) => (
             <LightCard key={result.title} className="p-8">
-              <p className="text-5xl font-black leading-none tracking-[-0.04em] text-black md:text-6xl">{result.metric}</p>
+              <p className="text-4xl font-black leading-none tracking-[-0.04em] text-black md:text-5xl">{result.metric}</p>
               <h3 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{result.title}</h3>
               <p className="mt-4 text-[17px] leading-[1.7] text-zinc-500">{result.body}</p>
             </LightCard>
