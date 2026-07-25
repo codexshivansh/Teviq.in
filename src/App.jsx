@@ -18,7 +18,7 @@ import PolicyPage from './pages/PolicyPage';
 
 function App() {
   return (
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter>
       <ScrollToTop />
       <SiteShell />
     </BrowserRouter>
