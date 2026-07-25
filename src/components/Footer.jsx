@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '../lib/router';
 import BrandLogo from './ui/BrandLogo';
 
 function Footer() {

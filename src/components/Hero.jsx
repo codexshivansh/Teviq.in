@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/router';
 import { FiArrowRight } from 'react-icons/fi';
 import { heroItem, stagger } from '../lib/animations';
 import HeroCinematicBackground from './HeroCinematicBackground';

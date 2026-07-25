@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '../lib/router';
 import { FiArrowRight, FiChevronDown, FiMenu, FiX } from 'react-icons/fi';
 import { navLinks, resourceNavItems } from '../data/content';
 import BrandLogo from './ui/BrandLogo';

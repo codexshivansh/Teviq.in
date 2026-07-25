@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/router';
 import { FiArrowRight } from 'react-icons/fi';
 import CaseStudies from '../components/CaseStudies';
 import FinalCTA from '../components/FinalCTA';
