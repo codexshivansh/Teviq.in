@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from '../lib/router';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
 import { policyBySlug, policyLastUpdated, publicPolicies } from '../data/policies';

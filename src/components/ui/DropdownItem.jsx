@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../lib/router';
 
 function DropdownItem({ href, icon: Icon, title, subtitle, onClick }) {
   const isInternalRoute = href.startsWith('/');

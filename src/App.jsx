@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from './lib/router';
 import { seoByPath, siteUrl } from './data/content';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';

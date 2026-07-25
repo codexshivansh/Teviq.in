@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/router';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
 
