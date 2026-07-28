@@ -20,7 +20,7 @@ function Pricing() {
             {foundingOffer.badge}
           </span>
 
-          <p className="mt-8 text-6xl font-black tracking-[-0.03em] text-black md:text-7xl">{foundingOffer.monthly}</p>
+          <p className="mt-8 text-4xl font-black tracking-[-0.03em] text-black sm:text-5xl md:text-7xl">{foundingOffer.monthly}</p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {foundingOffer.highlights.map((highlight) => (
