@@ -20,7 +20,7 @@ npm run preview
 
 - Dashboard: `https://dashboard.teviq.in`
 - Backend: `https://teviq-support-ai-backend.onrender.com`
-- Widget: `https://teviq-support-ai-widget.vercel.app/v1.0.0/widget.js`
+- Widget: `https://teviq-support-ai-widget.vercel.app/v1.1.0/widget.js`
 
 The widget script is preloaded on page load so the live-demo assistant is ready before a visitor reaches the demo section.
 
