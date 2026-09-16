@@ -5,7 +5,7 @@ import { heroItem, stagger } from '../lib/animations';
 import HeroCinematicBackground from './HeroCinematicBackground';
 
 function Hero() {
-  const title = 'AI Customer Support for D2C Brands';
+  const title = 'AI Support & Sales for D2C Brands';
 
   return (
     <section id="top" className="relative overflow-hidden bg-black">
@@ -20,7 +20,7 @@ function Hero() {
             {title}
           </motion.h1>
           <motion.p variants={heroItem(0.3)} className="mt-7 max-w-xl text-[17px] leading-[1.7] text-zinc-300 md:text-[19px]">
-            Automate order tracking, returns, FAQs and more with AI. Reduce support workload and delight your customers 24/7.
+            One AI support brain across your website and WhatsApp. It tracks orders with live Shopify data, handles returns, and turns pre-sale questions into sales — 24/7.
           </motion.p>
           <motion.div variants={heroItem(0.5)} className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start">
             <Link to="/book-demo" className="primary-button w-full sm:w-auto">
@@ -32,15 +32,15 @@ function Hero() {
           </motion.div>
 
           <motion.p variants={heroItem(0.62)} className="mt-5 text-sm font-semibold text-zinc-400">
-            Setup in minutes • Website widget • Shopify-ready roadmap • Built for Indian D2C brands
+            Website + WhatsApp • Live Shopify • Setup in minutes • Built for Indian D2C brands
           </motion.p>
 
           <motion.div variants={heroItem(0.7)} className="mt-11 border-t border-white/10 pt-8">
             <div className="grid gap-6 sm:grid-cols-3 sm:gap-0">
               {[
-                ['Orders', 'Track and explain status'],
-                ['Returns', 'Policy-aware guidance'],
-                ['FAQs', 'Instant brand answers'],
+                ['2 channels', 'Website + WhatsApp'],
+                ['Live Shopify', 'Real order & product data'],
+                ['Supports + sells', 'Handles pre-sale objections'],
               ].map(([value, label], index) => (
                 <div key={value} className={`min-w-0 px-4 text-center lg:px-5 lg:text-left ${index > 0 ? 'sm:border-l sm:border-white/10' : ''}`}>
                   <p className="mx-auto max-w-[11rem] text-pretty text-[22px] font-black leading-[1.05] tracking-[-0.04em] text-white sm:text-[18px] md:text-[20px] lg:mx-0 xl:text-[22px]">

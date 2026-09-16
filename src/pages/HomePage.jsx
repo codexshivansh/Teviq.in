@@ -1,6 +1,8 @@
 import Hero from '../components/Hero';
 import TrustedBy from '../components/TrustedBy';
 import ProblemSolution from '../components/ProblemSolution';
+import Channels from '../components/Channels';
+import Capabilities from '../components/Capabilities';
 import HowItWorks from '../components/HowItWorks';
 import SeeItWorking from '../components/SeeItWorking';
 import Pricing from '../components/Pricing';
@@ -16,6 +18,8 @@ function HomePage({ openFaq, setOpenFaq }) {
       <Hero />
       <TrustedBy />
       <ProblemSolution />
+      <Channels />
+      <Capabilities />
       <HowItWorks />
       <SeeItWorking />
       <Pricing />
