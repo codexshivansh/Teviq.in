@@ -15,6 +15,7 @@ import PlaceholderPage from './pages/PlaceholderPage';
 import LegalPage from './pages/LegalPage';
 import PoliciesPage from './pages/PoliciesPage';
 import PolicyPage from './pages/PolicyPage';
+import DataDeletionPage from './pages/DataDeletionPage';
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function SiteShell() {
         <Route path="/policies" element={<PoliciesPage />} />
         <Route path="/policies/:policySlug" element={<PolicyPage />} />
         <Route path="/privacy" element={<PolicyPage policySlug="privacy" />} />
+        <Route path="/data-deletion" element={<DataDeletionPage />} />
         <Route path="/terms" element={<LegalPage type="terms" />} />
         <Route path="/blog" element={<PlaceholderPage eyebrow="BLOG" title="Insights for AI-led ecommerce support" subtitle="Articles, playbooks, and product thinking from Teviq are coming soon." />} />
         <Route path="/help" element={<PlaceholderPage eyebrow="HELP CENTER" title="Teviq Help Center" subtitle="Setup guides, product support, and implementation resources are coming soon." />} />

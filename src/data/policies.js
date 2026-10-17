@@ -27,9 +27,11 @@ export const publicPolicies = [
     label: 'Data & privacy',
     title: 'Customer Data & Privacy Policy',
     summary: 'How Teviq uses, isolates, retains, and deletes brand and customer support data.',
+    lastUpdated: '17 October 2026',
     paragraphs: [
-      "Teviq stores brand-scoped product, order, knowledge, and customer chat data only to operate support for that brand. One brand's data is never used to answer another brand's customers.",
-      'Customer chat logs are retained for up to 30 days and removed through a scheduled server-side cleanup. Brand configuration, knowledge, and connected-store data remain available while the workspace is active. You can request deletion or disconnection of workspace data at any time by contacting Teviq support.',
+      'Teviq processes messages sent through a connected website chat, WhatsApp, or Instagram account to provide customer support and generate or send replies. Support conversations can be stored in the connected brand’s workspace and viewed by its authorized team. Teviq also uses the brand’s supplied knowledge and, where connected, store information to answer relevant questions. A brand’s data is kept separate from other brands’ support conversations.',
+      'Messages and account information pass through the relevant channel provider and the service providers used to host and operate Teviq. Connecting or disconnecting a channel is separate from requesting deletion of historical support records.',
+      'Teviq does not automatically delete support conversations after a fixed number of days. If a client or customer asks us to delete their data, we review the request, verify their connection to the account, and delete the applicable Teviq records unless they must be retained for legal or security reasons. To request access to or deletion of your data, email helloteviq@gmail.com or follow the instructions on our Data Deletion page.',
     ],
   },
   {

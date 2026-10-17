@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from '../lib/router';
 import { FiArrowRight, FiFileText } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
-import { policyLastUpdated, publicPolicies } from '../data/policies';
+import { publicPolicies } from '../data/policies';
 
 function PoliciesPage() {
   return (
@@ -18,7 +18,7 @@ function PoliciesPage() {
               Review Teviq's current subscription, data, pricing, support, and onboarding policies. Each page uses the same approved information available to Teviq Support AI.
             </motion.p>
             <motion.p variants={fadeInUp} className="mt-5 text-sm font-medium text-zinc-400">
-              Last updated {policyLastUpdated}
+              Each policy page shows its own last-updated date.
             </motion.p>
           </div>
 

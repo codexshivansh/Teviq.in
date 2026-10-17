@@ -46,7 +46,7 @@ function PolicyPage({ policySlug }) {
                 {policy.summary}
               </motion.p>
               <motion.div variants={fadeInUp} className="mt-8 border-y border-zinc-100 py-4 text-sm font-medium text-zinc-400">
-                Last updated {policyLastUpdated}
+                Last updated {policy.lastUpdated || policyLastUpdated}
               </motion.div>
 
               <motion.div variants={stagger} className="mt-10 space-y-7">

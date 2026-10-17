@@ -24,6 +24,7 @@ function Footer() {
             <Link to="/book-demo" className="transition hover:text-white">Demo</Link>
             <Link to="/policies" className="transition hover:text-white">Policies</Link>
             <Link to="/privacy" className="transition hover:text-white">Privacy Policy</Link>
+            <Link to="/data-deletion" className="transition hover:text-white">Data Deletion</Link>
             <Link to="/terms" className="transition hover:text-white">Terms of Service</Link>
           </div>
         </div>

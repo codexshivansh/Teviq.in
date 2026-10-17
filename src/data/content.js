@@ -53,6 +53,10 @@ export const seoByPath = {
     title: 'Customer Data & Privacy Policy | Teviq AI',
     description: 'Learn how Teviq stores, isolates, retains, and deletes brand and customer support data.',
   },
+  '/data-deletion': {
+    title: 'Data Deletion Requests | Teviq AI',
+    description: 'Learn how to request deletion of personal data associated with Teviq support conversations.',
+  },
   '/policies': {
     title: 'Policies & Service Information | Teviq AI',
     description: 'Review Teviq subscription, refund, privacy, pricing, support, and onboarding policies.',
