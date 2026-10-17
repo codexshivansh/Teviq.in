@@ -18,7 +18,7 @@ function ProductPage() {
               Teviq Support AI
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-[17px] leading-[1.7] text-zinc-500">
-              Website AI support for orders, returns, FAQs, products and human escalation.
+              One AI support brain across website and WhatsApp — live order tracking, returns, product answers, pre-sale objection handling and safe human escalation.
             </p>
           </motion.div>
 

@@ -1,18 +1,23 @@
 import { motion } from 'framer-motion';
 import { FiAlertTriangle, FiCheck, FiX } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
-import { comparisonRows } from '../data/content';
+import { comparisonRows, comparisonColumns } from '../data/content';
 import SectionHeader from './ui/SectionHeader';
 
 function Comparison() {
   return (
     <section id="comparison" className="section-dark">
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-        <SectionHeader label="Why Teviq" title="Not just another support bot." dark />
-        <motion.div variants={fadeInUp} className="mx-auto mt-20 max-w-5xl overflow-x-auto rounded-2xl border border-zinc-800 bg-[#111111] p-2">
+        <SectionHeader
+          label="How Teviq compares"
+          title="Good tools already exist. Here's where Teviq fits."
+          subtitle="Cheap bots are quick to install and enterprise helpdesks are powerful. Teviq's edge is the combination — website plus WhatsApp, live store data, Hinglish and pre-sale selling — priced for early Indian D2C brands."
+          dark
+        />
+        <motion.div variants={fadeInUp} className="mx-auto mt-16 max-w-5xl overflow-x-auto rounded-2xl border border-zinc-800 bg-[#111111] p-2">
           <div className="min-w-[820px]">
             <div className="grid grid-cols-[1.2fr_1fr_1fr_1.05fr]">
-              {['Feature', 'Free/Cheap Bot', 'Generic AI Bot', 'Teviq AI'].map((heading, index) => (
+              {comparisonColumns.map((heading, index) => (
                 <div key={heading} className={`border-b border-[#1C1C1E] px-5 py-5 text-[13px] font-semibold uppercase tracking-[0.12em] ${index === 3 ? 'rounded-t-xl border border-b-0 border-indigo/30 bg-teviq-column text-white' : 'text-zinc-400'}`}>
                   {heading}
                 </div>

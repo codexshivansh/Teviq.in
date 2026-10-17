@@ -13,8 +13,8 @@ function Footer() {
             <Link to="/" className="inline-flex p-1" aria-label="Teviq home">
               <BrandLogo variant="dark" className="h-9 md:h-11" />
             </Link>
-            <p className="mt-4 text-sm text-zinc-400">AI customer support for D2C ecommerce brands.</p>
-            <p className="mt-5 text-sm text-zinc-500">Teviq Support AI · Order Tracking · Returns & Exchanges · Knowledge Brain · Analytics</p>
+            <p className="mt-4 text-sm text-zinc-400">AI support &amp; sales for D2C ecommerce brands, across website and WhatsApp.</p>
+            <p className="mt-5 text-sm text-zinc-500">Teviq Support AI · Website + WhatsApp · Live Shopify · Knowledge Brain · Analytics</p>
           </div>
           <div className="flex flex-wrap gap-5 text-sm font-medium text-zinc-400">
             <Link to="/product" className="transition hover:text-white">Product</Link>
