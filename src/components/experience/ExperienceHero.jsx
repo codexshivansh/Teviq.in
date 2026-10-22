@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { FiArrowDown, FiArrowUpRight, FiPlay } from 'react-icons/fi';
+import { FiArrowUpRight, FiPlay } from 'react-icons/fi';
 import { Link } from '../../lib/router';
 import ProductExperience from './ProductExperience';
 import { smoothEase } from './Reveal';
@@ -37,7 +37,7 @@ export default function ExperienceHero() {
           <span className="hero-network-signal signal-one" /><span className="hero-network-signal signal-two" />
         </div>
         <motion.div style={reduceMotion ? undefined : { y }} className="hero-product-stage" initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.35, ease: smoothEase }}>
-          <div className="product-stage-label"><span>THREE CHANNELS. ONE CONVERSATION SPACE.</span><span>Go on, switch a channel <FiArrowDown /></span></div>
+          <div className="product-stage-label"><span>THREE CHANNELS. ONE CONVERSATION SPACE.</span></div>
           <ProductExperience />
         </motion.div>
       </div>
