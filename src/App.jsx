@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Route, Routes, useLocation } from './lib/router';
 import { seoByPath, siteUrl } from './data/content';
@@ -20,11 +21,11 @@ import DataDeletionPage from './pages/DataDeletionPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <MotionConfig reducedMotion="user"><BrowserRouter>
       <ScrollToTop />
       <SiteShell />
       <Analytics />
-    </BrowserRouter>
+    </BrowserRouter></MotionConfig>
   );
 }
 

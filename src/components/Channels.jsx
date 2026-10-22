@@ -15,8 +15,8 @@ function Channels() {
       >
         <SectionHeader
           label="One brain, every channel"
-          title="Your customers are on chat and WhatsApp. Now so is Teviq."
-          subtitle="The same support brain — same policies, order context and conversation memory — answers wherever your customers reach out. No separate bot to train per channel."
+          title="One support brain across three customer channels."
+          subtitle="Website chat, WhatsApp and Instagram share the same brand knowledge and conversation context—so your team can keep support consistent as shoppers move between channels."
           dark
         />
 

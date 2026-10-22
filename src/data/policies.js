@@ -18,7 +18,7 @@ export const publicPolicies = [
     title: 'Subscription Cancellation Policy',
     summary: 'How cancellation works, when access ends, and what happens on resubscription.',
     paragraphs: [
-      'You can cancel your Teviq subscription anytime — there is no minimum commitment period and no notice period required, including during your first 3-month price-locked period. When you cancel, your access continues until the end of your current billing cycle, and you will not be charged again. Note: if you cancel and later resubscribe, you will be charged the then-current standard rate, not your original locked-in price. You can cancel directly from your dashboard account settings or by contacting support.',
+      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. You can cancel in your dashboard account settings or by contacting Teviq support.',
     ],
   },
   {
@@ -39,11 +39,10 @@ export const publicPolicies = [
     href: '/policies/pricing-and-plans',
     label: 'Commercial terms',
     title: 'Pricing & Plans',
-    summary: 'Early-access pricing, the three-month price lock, and planned Growth pricing.',
+    summary: 'Current monthly plans, included channels, and billing details.',
     paragraphs: [
-      'Teviq is currently priced at ₹999/month as an early-access offer for our first 10 clients. This includes the full AI support widget — order tracking, returns, FAQs, and brand-specific knowledge, installable on your storefront with a single script tag. This rate is locked in for your first 3 months from signup, regardless of any price changes during that time. From your 4th month onward, your subscription renews at whatever the current standard rate is at that time — for example, once we onboard our first 10 clients, new signups move to ₹1999/month, and any client whose 3-month lock-in has ended will also move to that current rate.',
-      'A higher-tier Growth plan is also planned, adding WhatsApp and Instagram support alongside the website widget, priced at ₹3999/month. If the Growth plan launches while you are still within your original 3-month locked period, you can upgrade to it by paying just ₹1999 extra on top of your locked ₹999/month rate (₹2999/month total) — this discounted upgrade price also only holds until your original 3-month lock-in ends. From your 4th month onward, you would pay the standard rate for whichever plan you are on.',
-      'You can cancel anytime during or after your 3-month locked period — the 3 months guarantees your price, not a minimum commitment.',
+      'Teviq monthly plans: Starter ₹999 for website support; Standard ₹2,499 for website + WhatsApp; Growth ₹3,199 for website + WhatsApp + Instagram. Applicable WhatsApp message charges may be billed separately from the Teviq plan fee. Contact Teviq for current plan availability and onboarding details.',
+      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. You can cancel in your dashboard account settings or by contacting Teviq support.',
     ],
   },
   {

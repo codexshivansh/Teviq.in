@@ -4,7 +4,7 @@ import FinalCTA from '../components/FinalCTA';
 function PricingPage() {
   return (
     <main>
-      <Pricing />
+      <Pricing page />
       <FinalCTA />
     </main>
   );

@@ -11,7 +11,7 @@ function TrustedBy() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-sm">
               <p className="eyebrow">BUILT FOR</p>
-              <p className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-black">Fast-growing ecommerce categories with repeat support questions.</p>
+              <p className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-black">Made for ecommerce teams with repeat support questions.</p>
             </div>
             <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {categories.map((category) => (

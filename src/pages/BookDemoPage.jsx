@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from '../lib/router';
-import { FiArrowRight, FiCheck } from 'react-icons/fi';
+import { FiArrowRight, FiArrowUpRight, FiCheck } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
 
 function BookDemoPage() {
@@ -76,7 +76,7 @@ function BookDemoPage() {
 
     if (!accessKey) {
       setSubmitStatus('error');
-      setSubmitMessage('Web3Forms access key is missing. Add VITE_WEB3FORMS_KEY to the .env file and restart the dev server.');
+      setSubmitMessage('The booking form is temporarily unavailable. Please email helloteviq@gmail.com and we will help you arrange a demo.');
       return;
     }
 
@@ -108,7 +108,7 @@ function BookDemoPage() {
       }
 
       setSubmitStatus('success');
-      setSubmitMessage("Thank you! We've received your demo request. Our team will contact you within 24 business hours.");
+      setSubmitMessage("Thank you! We've received your demo request. Our team will follow up with the next steps.");
       form.reset();
     } catch (error) {
       setSubmitStatus('error');
@@ -117,145 +117,43 @@ function BookDemoPage() {
   };
 
   return (
-    <main>
-      <section className="bg-white pb-24 pt-32 md:pb-[150px] md:pt-[150px]">
-        <motion.div className="container-shell" initial="hidden" animate="visible" variants={stagger}>
-          <motion.div variants={fadeInUp} className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">BOOK A DEMO</p>
-            <h1 className="mt-6 text-balance text-[42px] font-black leading-none tracking-[-0.04em] text-black sm:text-6xl lg:text-[76px]">
-              See how Teviq Support AI can automate your customer support.
-            </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-[17px] leading-[1.7] text-zinc-500">
-              Tell us a little about your business and we’ll schedule a personalized walkthrough of Teviq Support AI.
-            </p>
+    <main className="booking-page">
+      <section className="booking-section">
+        <motion.div className="container-shell booking-layout" initial="hidden" animate="visible" variants={stagger}>
+          <motion.div variants={fadeInUp} className="booking-intro">
+            <span className="section-kicker"><span /> LET'S MAKE IT YOURS</span>
+            <h1>See what better<br />support feels like.<br /><em>For your brand.</em></h1>
+            <p>Bring your questions. We’ll walk through Teviq together and explore how it fits the way you support customers.</p>
+            <div className="booking-agenda">
+              <span>IN YOUR WALKTHROUGH</span>
+              {['Your channels and customer questions', 'Your products, services and sales objections', 'The right plan and next steps'].map(item => <div key={item}><FiCheck />{item}</div>)}
+            </div>
+            <div className="booking-contact">Prefer a conversation first?<a href="mailto:helloteviq@gmail.com">helloteviq@gmail.com <FiArrowUpRight /></a></div>
           </motion.div>
-
-          <div className="mx-auto mt-20 grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            {isSuccess ? (
-              <motion.div variants={fadeInUp} className="rounded-[20px] border border-zinc-100 bg-white p-6 shadow-card md:p-8">
-                <div className="rounded-2xl border border-[#BBF7D0] bg-[#F0FDF4] p-5">
-                  <p className="text-xl font-black tracking-[-0.03em] text-black">Demo Request Received</p>
-                  <div className="mt-4 space-y-4 text-sm font-medium leading-6 text-[#166534]">
-                    <p>Thank you for your interest in Teviq Support AI.</p>
-                    <p>We’ve successfully received your request.</p>
-                    <p>Our team will review your business and contact you within 24 business hours to schedule a personalized demo.</p>
-                    <p>If you have any questions, feel free to contact us.</p>
-                  </div>
-                  <div className="mt-6 grid gap-4 text-sm sm:grid-cols-2">
-                    <div>
-                      <p className="font-semibold text-zinc-500">Email</p>
-                      <a href="mailto:helloteviq@gmail.com" className="mt-1 block font-bold text-black transition hover:text-indigo">helloteviq@gmail.com</a>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-zinc-500">Phone</p>
-                      <a href="tel:+919555144436" className="mt-1 block font-bold text-black transition hover:text-indigo">+91 9555144436</a>
-                    </div>
-                  </div>
-                  <Link to="/" className="primary-button mt-8">
-                    Back to Home <FiArrowRight />
-                  </Link>
-                </div>
-              </motion.div>
-            ) : (
-            <motion.form variants={fadeInUp} onSubmit={handleSubmit} noValidate className="rounded-[20px] border border-zinc-100 bg-white p-6 shadow-card md:p-8">
-              {submitMessage && (
-                <div className="mb-6 rounded-2xl border border-[#FECACA] bg-[#FEF2F2] p-4 text-sm font-semibold leading-6 text-[#991B1B]">
-                  {submitMessage}
-                </div>
-              )}
-
-              <div className="grid gap-5 md:grid-cols-2">
-                <label className={labelClass}>
-                  Full Name *
-                  <input className={inputClass} name="fullName" type="text" required />
-                </label>
-                <label className={labelClass}>
-                  Work Email *
-                  <input className={inputClass} name="workEmail" type="email" required />
-                </label>
-                <label className={labelClass}>
-                  Phone Number *
-                  <input className={inputClass} name="phone" type="tel" required />
-                </label>
-                <label className={labelClass}>
-                  Brand Name *
-                  <input className={inputClass} name="brandName" type="text" required />
-                </label>
-                <label className={labelClass}>
-                  Website URL
-                  <input className={inputClass} name="website" type="url" placeholder="https://yourbrand.com" />
-                </label>
-                <label className={labelClass}>
-                  Platform
-                  <select className={inputClass} name="platform" defaultValue="">
-                    <option value="" disabled>Select platform</option>
-                    {platformOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                </label>
-                <label className={`${labelClass} md:col-span-2`}>
-                  Monthly Orders
-                  <select className={inputClass} name="monthlyOrders" defaultValue="">
-                    <option value="" disabled>Select orders</option>
-                    {orderOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                </label>
-                <label className={`${labelClass} md:col-span-2`}>
-                  Message
-                  <textarea
-                    className={`${inputClass} min-h-[140px] resize-y`}
-                    name="message"
-                    placeholder="Tell us about your customer support workflow or biggest challenge."
-                  />
-                </label>
+          <motion.div variants={fadeInUp} className="booking-form-card">
+            {isSuccess ? <div className="booking-success" role="status"><span className="booking-success-icon"><FiCheck /></span><h2>You're on our list.</h2><p>Your demo request has been received. Our team will follow up with the next steps.</p><Link to="/" className="button-ink">Back to Teviq <FiArrowUpRight /></Link></div> :
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="booking-form-title"><h2>Tell us a little about you.</h2><p>A few details, and we can make the demo useful.</p></div>
+              {submitMessage && <div className="booking-error" role="alert">{submitMessage}</div>}
+              <div className="grid gap-5 sm:grid-cols-2">
+                <label className={labelClass}>Your name <span aria-hidden="true">*</span><input className={inputClass} name="fullName" type="text" autoComplete="name" required placeholder="Full name" /></label>
+                <label className={labelClass}>Business name <span aria-hidden="true">*</span><input className={inputClass} name="brandName" type="text" autoComplete="organization" required placeholder="Your B2B or D2C business" /></label>
+                <label className={labelClass}>Work email <span aria-hidden="true">*</span><input className={inputClass} name="workEmail" type="email" autoComplete="email" required placeholder="you@yourbrand.com" /></label>
+                <label className={labelClass}>Phone number <span aria-hidden="true">*</span><input className={inputClass} name="phone" type="tel" autoComplete="tel" required placeholder="+91" /></label>
               </div>
-
-              <button type="submit" disabled={isSubmitting || isSuccess} className="primary-button mt-8 w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto">
-                {isSubmitting ? 'Sending...' : isSuccess ? 'Request Sent ✓' : 'Request Demo'} {!isSubmitting && !isSuccess && <FiArrowRight />}
-              </button>
-            </motion.form>
-            )}
-
-            <motion.div variants={fadeInUp} className="space-y-6">
-              <div className="rounded-[20px] border border-zinc-100 bg-white p-8 shadow-card">
-                <h2 className="text-2xl font-bold tracking-[-0.02em] text-black">What happens next?</h2>
-                <div className="mt-8 space-y-5">
-                  {nextSteps.map((step) => (
-                    <div key={step} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-indigo">
-                        <FiCheck className="h-4 w-4" />
-                      </span>
-                      <p className="text-[15px] font-medium leading-6 text-zinc-600">{step}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 border-t border-zinc-100 pt-6">
-                  <p className="text-sm font-semibold text-zinc-500">Typical response time</p>
-                  <p className="mt-2 text-xl font-black tracking-[-0.03em] text-black">Within 24 business hours.</p>
-                </div>
-              </div>
-
-              <div className="rounded-[20px] border border-zinc-100 bg-white p-8 shadow-card">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-500">Email</p>
-                    <a href="mailto:helloteviq@gmail.com" className="mt-2 block text-base font-bold text-black transition hover:text-indigo">helloteviq@gmail.com</a>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-500">Phone</p>
-                    <a href="tel:+919555144436" className="mt-2 block text-base font-bold text-black transition hover:text-indigo">+91 9555144436</a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+              <details className="booking-extra"><summary>A little more context <span>Optional</span></summary><div className="grid gap-5 pt-5 sm:grid-cols-2">
+                <label className={labelClass}>Website URL<input className={inputClass} name="website" type="url" placeholder="https://yourbrand.com" /></label>
+                <label className={labelClass}>Website platform<select className={inputClass} name="platform" defaultValue=""><option value="">Select platform</option>{platformOptions.map(option => <option key={option} value={option}>{option}</option>)}</select></label>
+                <label className={labelClass}>Monthly orders (if applicable)<select className={inputClass} name="monthlyOrders" defaultValue=""><option value="">Select orders</option>{orderOptions.map(option => <option key={option} value={option}>{option}</option>)}</select></label>
+              </div></details>
+              <label className={labelClass}>What would you like help with?<textarea className={`${inputClass} min-h-[105px] resize-y`} name="message" placeholder="Your channels, customer questions, sales objections, or support challenges…" /></label>
+              <button type="submit" disabled={isSubmitting} className="button-violet booking-submit disabled:cursor-not-allowed disabled:opacity-70">{isSubmitting ? 'Sending your request…' : 'Book my free demo'}{!isSubmitting && <FiArrowUpRight />}</button>
+              <p className="booking-privacy">Required fields are marked *. Your details help us respond to this request. <Link to="/privacy">Privacy policy</Link></p>
+            </form>}
+          </motion.div>
         </motion.div>
       </section>
     </main>
   );
 }
-
 export default BookDemoPage;

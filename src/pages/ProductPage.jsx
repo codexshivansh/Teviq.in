@@ -1,47 +1,19 @@
-import { motion } from 'framer-motion';
+import { FiArrowUpRight } from 'react-icons/fi';
 import { Link } from '../lib/router';
-import { FiArrowRight } from 'react-icons/fi';
-import { fadeInUp, stagger } from '../lib/animations';
-import { productModules } from '../data/content';
-import LightCard from '../components/ui/LightCard';
-import IconBox from '../components/ui/IconBox';
+import Reveal from '../components/experience/Reveal';
+import ProductExperience from '../components/experience/ProductExperience';
+import { KnowledgeSection, SectionIntro, TeamSection } from '../components/experience/ExperienceSections';
 import FinalCTA from '../components/FinalCTA';
 
-function ProductPage() {
-  return (
-    <main>
-      <section className="bg-white pb-24 pt-32 md:pb-[150px] md:pt-[150px]">
-        <motion.div className="container-shell" initial="hidden" animate="visible" variants={stagger}>
-          <motion.div variants={fadeInUp} className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">PRODUCT</p>
-            <h1 className="mt-6 text-balance text-[42px] font-black leading-none tracking-[-0.04em] text-black sm:text-6xl lg:text-[84px]">
-              Teviq Support AI
-            </h1>
-            <p className="mx-auto mt-7 max-w-xl text-[17px] leading-[1.7] text-zinc-500">
-              One AI support brain across website and WhatsApp — live order tracking, returns, product answers, pre-sale objection handling and safe human escalation.
-            </p>
-          </motion.div>
-
-          <motion.div variants={stagger} className="mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {productModules.map((module) => (
-              <LightCard key={module.title} className="p-8">
-                <IconBox icon={module.icon} />
-                <h2 className="mt-8 text-xl font-bold tracking-[-0.01em] text-black">{module.title}</h2>
-                <p className="mt-4 text-[17px] leading-[1.7] text-zinc-500">{module.subtitle}</p>
-              </LightCard>
-            ))}
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="mx-auto mt-16 flex justify-center">
-            <Link to="/book-demo" className="primary-button">
-              Book a Free Demo <FiArrowRight />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </section>
-      <FinalCTA />
-    </main>
-  );
+const features=[
+ ['Business knowledge','Give Teviq your FAQs, policies, product information and service details. Update the knowledge as your business changes.'],
+ ['Three customer channels','Website chat, WhatsApp Business and Instagram DMs, with the channels available in your selected plan.'],
+ ['Sales & objection handling','Help B2B and D2C customers compare options and work through concerns about price, scope or suitability, using your product and service information—not invented offers.'],
+ ['Store context','Connect Shopify for product and order context. Order lookups use identity checks before sharing customer details.'],
+ ['Conversation continuity','Use earlier messages and replies in a customer’s conversation to make the next answer more useful.'],
+ ['Human follow-up','Keep conversations visible to your team so they can review and follow up when needed.'],
+ ['English, Hindi & Hinglish','Meet customers in the language they use, with answers shaped by your brand knowledge.'],
+];
+export default function ProductPage(){
+ return <main className="product-page"><section className="page-hero"><div className="container-shell"><Reveal><span className="section-kicker"><span/>THE PRODUCT</span><h1>A good conversation<br />starts with <em>context.</em></h1><p className="page-lead">Your products, services and business knowledge. Teviq helps B2B and D2C teams support customers and handle sales enquiries across their channels.</p><Link to="/book-demo" className="button-ink mt-7">See it with your brand <FiArrowUpRight/></Link></Reveal></div></section><section className="product-preview-section"><div className="container-shell"><Reveal><ProductExperience/></Reveal></div></section><KnowledgeSection/><section className="experience-section product-feature-index"><div className="container-shell"><SectionIntro label="THE EVERYDAY ESSENTIALS" title={<>Thoughtful support.<br /><em>From the inside out.</em></>}/>{features.map(([title,body],index)=><Reveal className="feature-index-row" key={title}><span>0{index+1}</span><h3>{title}</h3><p>{body}</p></Reveal>)}</div></section><TeamSection/><FinalCTA/></main>;
 }
-
-export default ProductPage;

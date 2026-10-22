@@ -34,24 +34,24 @@ export const siteUrl = 'https://www.teviq.in';
 
 export const seoByPath = {
   '/': {
-    title: 'Teviq Support AI – AI Support & Sales for D2C Brands',
-    description: 'One AI support brain across your website and WhatsApp. Teviq tracks orders, handles returns, answers with live Shopify data, and turns pre-sale questions into sales for D2C ecommerce brands.',
+    title: 'Teviq AI – Support & Sales for B2B and D2C Businesses',
+    description: 'Customer support, sales assistance and objection handling for B2B and D2C businesses across website, WhatsApp and Instagram, grounded in your knowledge.',
   },
   '/product': {
     title: 'Product | Teviq Support AI',
-    description: 'An AI support brain for D2C brands across website and WhatsApp — order tracking, returns, live Shopify context, pre-sale objection handling, and safe human escalation.',
+    description: 'AI support and sales assistance for B2B and D2C businesses, using product, service and policy knowledge across website, WhatsApp and Instagram.',
   },
   '/pricing': {
     title: 'Pricing | Teviq AI',
-    description: 'Simple Teviq AI pricing for D2C ecommerce brands. Website widget and WhatsApp support included from day one.',
+    description: 'Clear monthly Teviq plans for B2B and D2C businesses, from website support to website, WhatsApp and Instagram.',
   },
   '/book-demo': {
     title: 'Book a Demo | Teviq AI',
-    description: 'Request a personalized walkthrough of Teviq Support AI for your D2C ecommerce brand.',
+    description: 'Request a personalized walkthrough of Teviq support and sales assistance for your B2B or D2C business.',
   },
   '/case-studies': {
-    title: 'Case Studies | Teviq AI',
-    description: 'See results from Teviq AI customer support automation for growing D2C ecommerce teams.',
+    title: 'Our Approach | Teviq AI',
+    description: 'Explore how Teviq approaches customer support and sales assistance for B2B and D2C businesses.',
   },
   '/live-demo': {
     title: 'Live Demo | Teviq AI',
@@ -79,7 +79,7 @@ export const seoByPath = {
   },
   '/policies/pricing-and-plans': {
     title: 'Pricing & Plans Policy | Teviq AI',
-    description: 'Review Teviq early-access pricing, price-lock terms, and planned Growth pricing.',
+    description: 'Review Teviq monthly plans, channel availability, and billing details.',
   },
   '/policies/support-response-time': {
     title: 'Support Response Time | Teviq AI',
@@ -117,14 +117,14 @@ export const channels = [
     status: 'Live',
     statusStyle: 'bg-[#DCFCE7] text-[#16A34A]',
     icon: FiMessageCircle,
-    body: 'Connect your WhatsApp Business number through the Meta Cloud API. The same support brain replies on WhatsApp, with human handoff inside the 24-hour window.',
+    body: 'Connect your WhatsApp Business number to bring the same brand-aware support brain into WhatsApp conversations.',
   },
   {
     name: 'Instagram DM',
-    status: 'Coming soon',
-    statusStyle: 'bg-[#DBEAFE] text-[#1D4ED8]',
+    status: 'Live',
+    statusStyle: 'bg-[#DCFCE7] text-[#16A34A]',
     icon: FiInstagram,
-    body: 'Bring the same brand-aware answers to Instagram direct messages, built on the same channel-adapter layer as WhatsApp.',
+    body: 'Bring the same brand-aware answers to Instagram direct messages, alongside your website and WhatsApp inbox.',
   },
   {
     name: 'Email',
@@ -140,7 +140,7 @@ export const capabilities = [
   {
     icon: FiLayers,
     title: 'One brain, every channel',
-    body: 'Website and WhatsApp share the same brand knowledge, policies, order context and conversation state — so a customer never repeats themselves when they switch channels.',
+    body: 'Website, WhatsApp and Instagram share the same brand knowledge, policies and conversation context — so your team works from one support brain.',
   },
   {
     icon: FiTrendingUp,
@@ -192,8 +192,13 @@ export const productModules = [
   },
   {
     title: 'WhatsApp Support',
-    subtitle: 'The same brain on your WhatsApp Business number via the Meta Cloud API, with human handoff.',
+    subtitle: 'The same brand-aware support brain across your WhatsApp Business number, website and Instagram.',
     icon: FiMessageCircle,
+  },
+  {
+    title: 'Instagram DM Support',
+    subtitle: 'Handle Instagram customer questions with the same brand knowledge and conversation context as your other connected channels.',
+    icon: FiInstagram,
   },
   {
     title: 'Human Escalation',
@@ -215,8 +220,8 @@ export const platformCards = [
     badge: 'Live',
     badgeStyle: 'bg-[#DCFCE7] text-[#16A34A]',
     icon: FiMessageCircle,
-    title: 'Website + WhatsApp',
-    body: 'One AI support brain answering across your storefront widget and WhatsApp Business number today — orders, returns, FAQs, product questions and escalation with full brand context.',
+    title: 'Website, WhatsApp + Instagram',
+    body: 'One AI support brain answering across website chat, WhatsApp Business and Instagram DMs — with shared brand context and team visibility.',
     note: 'Available now',
   },
   {
@@ -227,11 +232,12 @@ export const platformCards = [
     body: 'Real Shopify orders and products, plus a RAG knowledge brain trained on your policies, PDFs and FAQs — answering from your brand, not the open internet.',
   },
   {
-    badge: 'Rolling out',
-    badgeStyle: 'bg-[#DBEAFE] text-[#1D4ED8]',
+    badge: 'Live',
+    badgeStyle: 'bg-[#DCFCE7] text-[#16A34A]',
     icon: FiInstagram,
     title: 'Instagram & Analytics',
-    body: 'Instagram DM support and deeper resolution, escalation and missed-question analytics through the same support brain as brands scale.',
+    body: 'Instagram DM support through the same support brain, with conversation visibility for your team.',
+    note: 'Available now',
   },
 ];
 
@@ -279,7 +285,13 @@ export const features = [
   {
     icon: FiMessageCircle,
     title: 'WhatsApp Channel',
-    body: 'Connect your WhatsApp Business number via the Meta Cloud API. The same brain answers there, with human handoff inside the 24-hour window.',
+    body: 'The same brand-aware support brain answers WhatsApp messages, with team visibility for follow-up.',
+    image: '',
+  },
+  {
+    icon: FiInstagram,
+    title: 'Instagram DM Support',
+    body: 'Respond to Instagram DMs from the same brand knowledge base and keep the conversation visible to your team.',
     image: '',
   },
   {
@@ -320,7 +332,7 @@ export const features = [
 export const comparisonColumns = ['Feature', 'DIY / cheap bot', 'Enterprise helpdesk', 'Teviq AI'];
 
 export const comparisonRows = [
-  ['Website + WhatsApp in one brain', 'limited', 'yes', 'yes'],
+  ['Website + WhatsApp + Instagram in one brain', 'limited', 'yes', 'yes'],
   ['Live Shopify order & product data', 'no', 'yes', 'yes'],
   ['Brand knowledge base (RAG)', 'limited', 'yes', 'yes'],
   ['Handles pre-sale objections', 'no', 'no', 'yes'],
@@ -355,8 +367,6 @@ export const pricingPlans = [
     monthly: '₹2,499',
     period: '/month',
     tagline: 'One brain across your website and WhatsApp.',
-    badge: 'Most popular',
-    highlight: true,
     channels: ['Website widget', 'WhatsApp'],
     features: [
       'Everything in Starter',
@@ -373,9 +383,9 @@ export const pricingPlans = [
     name: 'Growth',
     monthly: '₹3,199',
     period: '/month',
-    tagline: 'Every channel your customers reach out on.',
-    badge: 'Instagram in progress',
-    inProgress: true,
+    tagline: 'One support brain across all three channels.',
+    badge: 'Recommended',
+    highlight: true,
     channels: ['Website widget', 'WhatsApp', 'Instagram DM'],
     features: [
       'Everything in Standard',
@@ -384,7 +394,7 @@ export const pricingPlans = [
       'Advanced analytics & insights',
       'Dedicated onboarding support',
     ],
-    cta: 'Join the waitlist',
+    cta: 'Get Started',
     accent: 'from-fuchsia-500 to-indigo',
   },
 ];
@@ -402,8 +412,8 @@ export const steps = [
   },
   {
     number: '03',
-    title: 'Go live on website and WhatsApp',
-    body: 'Add one script to your storefront and connect your WhatsApp Business number. The same brain answers on both channels.',
+    title: 'Go live across your channels',
+    body: 'Add the website widget and connect the WhatsApp or Instagram accounts included in your plan. Your team manages conversations from one brain.',
   },
   {
     number: '04',
@@ -414,8 +424,12 @@ export const steps = [
 
 export const faqs = [
   {
+    question: 'Is Teviq for B2B or D2C businesses?',
+    answer: 'Both. Teviq uses your product, service and policy knowledge to help with customer support, enquiries and sales objections. B2B teams can explain service scope and onboarding; D2C teams can answer product, delivery and return questions. Shopify-specific features apply to connected stores, not every business.',
+  },
+  {
     question: 'Which channels does Teviq support today?',
-    answer: 'The website widget and WhatsApp are both live. WhatsApp connects through your own WhatsApp Business number via the Meta Cloud API, and both channels share one support brain. Instagram DM and email are on the roadmap.',
+    answer: 'Teviq supports website chat, WhatsApp Business, and Instagram DMs. Which channels are included depends on your plan; channels are connected during onboarding. Email is not currently listed as a supported channel.',
   },
   {
     question: 'Do I need technical knowledge to set up Teviq?',
@@ -427,7 +441,7 @@ export const faqs = [
   },
   {
     question: 'Can Teviq actually help me sell, not just support?',
-    answer: 'Yes. Teviq handles pre-sale objections — price, trust, delivery, COD and size/fit — the way a good salesperson would, so hesitant shoppers convert instead of leaving.',
+    answer: 'Yes. Teviq can help with pre-sale concerns about price, value, service scope or product suitability, using your business knowledge. It helps customers make an informed decision without invented discounts or guaranteed sales outcomes.',
   },
   {
     question: "What happens if the AI doesn't know the answer?",
@@ -446,8 +460,8 @@ export const faqs = [
 export const roiMetrics = [
   {
     value: '24/7',
-    title: 'Instant replies, both channels',
-    body: 'Answers common questions on your website and WhatsApp whenever shoppers need help — not only when your team is online.',
+    title: 'Instant replies across channels',
+    body: 'Answers common questions on website chat, WhatsApp and Instagram whenever shoppers need help — not only when your team is online.',
   },
   {
     value: 'Fewer',

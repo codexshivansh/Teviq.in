@@ -1,115 +1,34 @@
+import { useState } from 'react';
+import { FiArrowUpRight, FiCheck, FiInstagram } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from '../lib/router';
-import { FiArrowRight, FiCheck } from 'react-icons/fi';
-import { motion } from 'framer-motion';
-import { stagger } from '../lib/animations';
 import { pricingPlans } from '../data/content';
-import SectionHeader from './ui/SectionHeader';
-import FlipCard from './ui/FlipCard';
+import Reveal from './experience/Reveal';
+import { SectionIntro } from './experience/ExperienceSections';
 
-function Pricing() {
-  return (
-    <section id="pricing" className="bg-white pb-24 pt-32 md:pb-[160px] md:pt-[160px]">
-      <motion.div
-        className="container-shell"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={stagger}
-      >
-        <SectionHeader
-          label="Pricing"
-          title="Simple pricing that grows with your channels."
-          subtitle="Start on your website, add WhatsApp, then go omnichannel. Hover a plan to see everything included — no setup fees, cancel anytime."
-        />
-
-        <div className="mt-16 grid items-stretch gap-6 md:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <div key={plan.name} className={plan.highlight ? 'lg:-my-2' : ''}>
-              <FlipCard
-                className={`h-[440px] ${plan.highlight ? 'lg:h-[456px]' : ''}`}
-                faceClassName={`rounded-[24px] border ${
-                  plan.highlight ? 'border-indigo shadow-highlight' : 'border-zinc-200/80 shadow-card'
-                }`}
-                ariaLabel={`${plan.name} plan — flip for what's included`}
-                front={
-                  <div className="relative flex h-full flex-col bg-white p-8">
-                    {plan.badge && (
-                      <span
-                        className={`inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.06em] ${
-                          plan.inProgress
-                            ? 'bg-[#FEF3C7] text-[#B45309]'
-                            : 'bg-indigo/10 text-indigo'
-                        }`}
-                      >
-                        {plan.inProgress && (
-                          <span className="relative flex h-1.5 w-1.5">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#B45309] opacity-70" />
-                            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#B45309]" />
-                          </span>
-                        )}
-                        {plan.badge}
-                      </span>
-                    )}
-
-                    <p className={`text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 ${plan.badge ? 'mt-6' : ''}`}>
-                      {plan.name}
-                    </p>
-
-                    <div className="mt-3 flex items-end gap-1">
-                      <span className="text-5xl font-black tracking-[-0.03em] text-black">{plan.monthly}</span>
-                      <span className="mb-1.5 text-sm font-semibold text-zinc-400">{plan.period}</span>
-                    </div>
-
-                    <p className="mt-4 text-[15px] leading-[1.6] text-zinc-500">{plan.tagline}</p>
-
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {plan.channels.map((channel) => (
-                        <span
-                          key={channel}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-600"
-                        >
-                          <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-indigo to-sky" />
-                          {channel}
-                        </span>
-                      ))}
-                    </div>
-
-                    <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-xs font-semibold text-indigo">
-                      See what&apos;s included <FiArrowRight className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                }
-                back={
-                  <div className="flex h-full flex-col bg-zinc-50 p-8">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">{plan.name} includes</p>
-                    <ul className="mt-5 flex-1 space-y-3">
-                      {plan.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2.5 text-sm font-medium text-zinc-700">
-                          <FiCheck className="mt-0.5 h-4 w-4 shrink-0 text-indigo" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      to="/book-demo"
-                      onClick={(event) => event.stopPropagation()}
-                      className={plan.highlight ? 'primary-button mt-6 w-full' : 'outline-button mt-6 w-full'}
-                    >
-                      {plan.cta} <FiArrowRight />
-                    </Link>
-                  </div>
-                }
-              />
-            </div>
-          ))}
+const channelBadges = [
+  { label: 'Website', style: 'web', Icon: null },
+  { label: 'WhatsApp', style: 'whatsapp', Icon: FaWhatsapp },
+  { label: 'Instagram', style: 'instagram', Icon: FiInstagram },
+];
+export default function Pricing({ page = false }) {
+  const [selected, setSelected] = useState(2);
+  return <section id="pricing" className={`experience-section pricing-section ${page ? 'pricing-section--page' : ''}`}>
+    <div className="container-shell">
+      <div className="pricing-heading"><SectionIntro heading={page ? 'h1' : 'h2'} label="SIMPLE MONTHLY PLANS" title={<>Choose your channels.<br /><em>Pick your plan.</em></>} description="Website only, website + WhatsApp, or all three channels. Start with the conversations you need to handle today." />
+        <Reveal className="plan-picker"><span>Where do your customers reach you?</span><div role="group" aria-label="Highlight a plan by channel">{['Website', '+ WhatsApp', '+ Instagram'].map((name,index) => <button key={name} aria-pressed={selected === index} onClick={() => setSelected(index)} className={selected === index ? 'selected' : ''}>{name}</button>)}</div></Reveal>
+      </div>
+      <div className="new-pricing-grid">{pricingPlans.map((plan,index) => <Reveal key={plan.name} delay={index * 0.07} className={`new-price-card ${selected === index ? 'is-selected' : ''}`}>
+        <div className="price-card-top"><span className="plan-number">0{index+1}</span><span className="plan-selection-label">{selected === index ? 'YOUR SELECTED CHANNELS' : index === 2 ? 'THE COMPLETE PICTURE' : 'YOUR NEXT CHAPTER'}</span></div>
+        <h3>{plan.name}</h3><p className="plan-description">{plan.tagline}</p>
+        <div className="plan-amount">{plan.monthly}<span>/ month</span></div>
+        <div className="plan-channel-badges" aria-label={`${plan.name} channels`}>
+          {plan.channels.map((channel,i) => { const { label, style, Icon }=channelBadges[i]; return <div key={channel} className={`plan-channel-badge badge-${style}`}><span className="channel-badge-symbol" aria-hidden="true">{Icon ? <Icon /> : <b>www</b>}</span><span>{label}</span></div>; })}
         </div>
-
-        <motion.p className="mt-10 text-center text-sm font-medium text-zinc-400">
-          Prices are per store, billed monthly. Instagram DM is rolling out and included with Growth as it goes live.
-        </motion.p>
-      </motion.div>
-    </section>
-  );
+        <Link to="/book-demo" className={selected === index ? 'button-violet' : 'button-outline'}>Choose {plan.name} <FiArrowUpRight /></Link>
+        <div className="plan-features-heading">WHAT'S INCLUDED</div><ul>{plan.features.map(feature => <li key={feature}><FiCheck />{feature}</li>)}</ul>
+      </Reveal>)}</div>
+      <Reveal className="pricing-notes"><p>Standard prices · Per store · Billed monthly</p><p>Applicable WhatsApp message charges may be separate from your Teviq plan. <Link to="/policies/pricing-and-plans">View plan terms <FiArrowUpRight /></Link></p></Reveal>
+    </div>
+  </section>;
 }
-
-export default Pricing;

@@ -57,13 +57,13 @@ function ProblemSolution() {
           Hover a card <span className="text-zinc-300">(or tap on mobile)</span> to see how each one works.
         </motion.p>
 
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
             const theme = featureThemes[index % featureThemes.length];
             return (
             <FlipCard
               key={feature.title}
-              className="h-[320px]"
+              className="h-[310px]"
               faceClassName="rounded-[20px] border border-zinc-200/70"
               ariaLabel={`${feature.title} — flip for details`}
               front={

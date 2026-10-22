@@ -9,8 +9,8 @@ function HowItWorks() {
       <motion.div className="container-shell" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <SectionHeader
           label="How It Works"
-          title="From brand knowledge to live on two channels in four clear steps."
-          subtitle="Keep the setup simple: connect or upload what Teviq needs, test the AI, then go live on your website widget and WhatsApp."
+          title="From brand knowledge to connected channels in four clear steps."
+          subtitle="Set up your knowledge, test the answers, then connect the website, WhatsApp or Instagram channels included in your plan."
           dark
         />
         <div className="mx-auto mt-20 max-w-4xl">
