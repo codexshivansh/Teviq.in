@@ -46,12 +46,6 @@ function ChatGreetingBubble() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!visible) return undefined;
-    const hideTimer = setTimeout(() => setVisible(false), 10000);
-    return () => clearTimeout(hideTimer);
-  }, [visible]);
-
   const openWidget = () => {
     dismissGreeting();
     document.querySelector('.teviq-chat-button')?.click();
