@@ -1,4 +1,4 @@
-export const policyLastUpdated = '22 July 2026';
+export const policyLastUpdated = '1 November 2026';
 
 export const publicPolicies = [
   {
@@ -8,7 +8,7 @@ export const publicPolicies = [
     title: 'Refund Policy',
     summary: 'Free-trial access, paid subscription refunds, and billing-cycle terms.',
     paragraphs: [
-      'Teviq offers a 7-day free trial, giving you full access to test the AI support widget with your own store data before paying anything. Once your paid subscription begins, payments are non-refundable. We do not offer partial or prorated refunds for unused time within a billing cycle. If you experience technical issues during setup, our support team will work with you to resolve them — please contact us before requesting a refund.',
+      'When offered and activated for your workspace, the Teviq free trial runs for 3 days from activation. Configured reply and AI usage limits apply; confirm the applicable limits in your trial details. Paid subscription prices and billing terms are provided before payment. Once your paid subscription begins, payments are non-refundable. We do not offer partial or prorated refunds for unused time within a billing cycle. If you experience technical issues during setup, our support team will work with you to resolve them — please contact us before requesting a refund.',
     ],
   },
   {
@@ -18,7 +18,7 @@ export const publicPolicies = [
     title: 'Subscription Cancellation Policy',
     summary: 'How cancellation works, when access ends, and what happens on resubscription.',
     paragraphs: [
-      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. You can cancel in your dashboard account settings or by contacting Teviq support.',
+      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. Contact Teviq support to request cancellation and obtain confirmation.',
     ],
   },
   {
@@ -42,7 +42,7 @@ export const publicPolicies = [
     summary: 'Current monthly plans, included channels, and billing details.',
     paragraphs: [
       'Teviq monthly plans: Starter ₹999 for website support; Standard ₹2,499 for website + WhatsApp; Growth ₹3,199 for website + WhatsApp + Instagram. Applicable WhatsApp message charges may be billed separately from the Teviq plan fee. Contact Teviq for current plan availability and onboarding details.',
-      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. You can cancel in your dashboard account settings or by contacting Teviq support.',
+      'You can cancel your Teviq subscription anytime. There is no minimum commitment period or notice period. After cancellation, access continues until the end of the current billing cycle and you will not be charged again. If you later resubscribe, the price will be the then-current standard rate. Contact Teviq support to request cancellation and obtain confirmation.',
     ],
   },
   {
@@ -52,7 +52,7 @@ export const publicPolicies = [
     title: 'Support Response Time (SLA)',
     summary: 'Support availability, response expectations, and contact details.',
     paragraphs: [
-      'Teviq\'s support team responds to all client queries within 24 hours. Our support hours are Monday to Saturday, 10:00 AM to 9:00 PM IST. You can reach us by WhatsApp at +919555144436 or email at helloteviq@gmail.com. For urgent issues affecting your live widget, mention "urgent" in your message for faster prioritization.',
+      'For help, use the current support contact details shown here or in your dashboard. Support availability follows the published business hours. If an issue affects live customer support, describe the impact and mark your message urgent so the team can assess its priority. A support request does not guarantee immediate resolution.',
     ],
   },
   {
@@ -62,7 +62,7 @@ export const publicPolicies = [
     title: 'Setup & Onboarding',
     summary: 'What is involved in setup, installation, and connecting store data.',
     paragraphs: [
-      'Installing the Teviq widget takes only a few minutes: after signup, you add a single script tag to your Shopify or custom storefront. Full setup time depends on the size and quality of your catalog, policies, FAQs, and support rules. Shopify product and order data can be connected from the dashboard, and answers should be tested in the AI Playground before launch.',
+      'Installing the Teviq website widget usually takes 15–20 minutes. Instagram connection and testing usually take 15–30 minutes when the Instagram Professional account and required access are ready. WhatsApp Business connection and testing usually take 30–60 minutes when the WhatsApp Business account, eligible number, and required access are ready. These estimates assume the required storefront or business-account access, permissions, and setup information are available when onboarding starts. Meta eligibility checks, verification, or approval can add waiting time outside Teviq\'s control and may extend the timeline from a few hours to several days. These are estimates, not guarantees. Shopify product or order-data connection is a separate setup step.',
     ],
   },
 ];

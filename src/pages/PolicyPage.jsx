@@ -3,8 +3,10 @@ import { Link, useParams } from '../lib/router';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
 import { policyBySlug, policyLastUpdated, publicPolicies } from '../data/policies';
+import { useSupportContact } from '../lib/useSupportContact';
 
 function PolicyPage({ policySlug }) {
+  const supportContact = useSupportContact();
   const params = useParams();
   const activeSlug = policySlug || params.policySlug;
   const policy = policyBySlug[activeSlug];
@@ -55,6 +57,13 @@ function PolicyPage({ policySlug }) {
                     {paragraph}
                   </motion.p>
                 ))}
+                {policy.slug === 'support-response-time' && supportContact ? (
+                  <div className="space-y-2 text-[17px] leading-[1.85] text-zinc-700">
+                    {typeof supportContact.hours === 'string' && supportContact.hours ? <p>Current support hours: {supportContact.hours}</p> : null}
+                    {typeof supportContact.phone === 'string' && supportContact.phone ? <p>Phone/WhatsApp: {supportContact.phone}</p> : null}
+                    {typeof supportContact.email === 'string' && supportContact.email ? <p>Email: {supportContact.email}</p> : null}
+                  </div>
+                ) : null}
               </motion.div>
 
               <motion.div variants={fadeInUp} className="mt-14 border-t border-zinc-100 pt-8">
