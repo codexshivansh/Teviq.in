@@ -47,7 +47,7 @@ function SeeItWorking() {
 
         <motion.div variants={fadeInUp} className="mt-16 text-center">
           <Link to="/live-demo" className="ghost-button-dark">
-            Try It Yourself on 3 Demo Storefronts <FiArrowRight />
+            Explore 3 Sample Storefronts <FiArrowRight />
           </Link>
         </motion.div>
       </motion.div>

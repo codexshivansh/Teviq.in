@@ -23,7 +23,7 @@ export default function ExperienceHero() {
         <motion.p className="hero-description" initial={reduceMotion ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.22, ease: smoothEase }}>Teviq answers customer questions, explains your products or services, and handles sales objections using your business knowledge. On your website, WhatsApp and Instagram.</motion.p>
         <motion.div className="hero-actions" initial={reduceMotion ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.32, ease: smoothEase }}>
           <Link to="/book-demo" className="button-ink">Book a free demo <FiArrowUpRight /></Link>
-          <Link to="/live-demo" className="button-text"><span className="play-circle"><FiPlay /></span> Try a live demo</Link>
+          <Link to="/live-demo" className="button-text"><span className="play-circle"><FiPlay /></span> Explore demo previews</Link>
         </motion.div>
         <div className="hero-footnote">Your knowledge. Your channels. Your team in control.<br />Plans from ₹999 / month</div>
         </div>

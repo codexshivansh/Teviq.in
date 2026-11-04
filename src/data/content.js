@@ -27,7 +27,7 @@ import {
 export const navLinks = [
   { label: 'Product', href: '/product' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Live Demo', href: '/live-demo' },
+  { label: 'Demo Previews', href: '/live-demo' },
 ];
 
 export const siteUrl = 'https://www.teviq.in';
@@ -54,8 +54,8 @@ export const seoByPath = {
     description: 'Explore how Teviq approaches customer support and sales assistance for B2B and D2C businesses.',
   },
   '/live-demo': {
-    title: 'Live Demo | Teviq AI',
-    description: 'Try Teviq Support AI on three demo storefronts covering order tracking, returns, and product questions.',
+    title: 'Demo Previews | Teviq AI',
+    description: 'Browse three sample storefront previews and book a guided Teviq walkthrough. AI replies in sample stores are currently unavailable.',
   },
   '/privacy': {
     title: 'Customer Data & Privacy Policy | Teviq AI',
@@ -487,17 +487,17 @@ export const dashboardPreview = [
 export const demoOptions = [
   {
     title: 'Fashion Demo',
-    body: 'Try order tracking, returns, size help and exchange flows.',
+    body: 'Browse a sample fashion storefront and its support widget placement.',
     href: 'https://teviq-support-ai-widget.vercel.app/demo-vastra.html',
   },
   {
     title: 'Electronics Demo',
-    body: 'Try warranty, shipping, product help and support escalation.',
+    body: 'Browse a sample electronics storefront and its support widget placement.',
     href: 'https://teviq-support-ai-widget.vercel.app/demo-urban.html',
   },
   {
     title: 'Beauty Demo',
-    body: 'Try ingredients, usage, product FAQs and delivery questions.',
+    body: 'Browse a sample beauty storefront and its support widget placement.',
     href: 'https://teviq-support-ai-widget.vercel.app/demo-beauty.html',
   },
 ];

@@ -4,7 +4,7 @@ import { Link, useLocation } from '../lib/router';
 import { FiArrowUpRight, FiChevronDown, FiMenu, FiX } from 'react-icons/fi';
 import BrandLogo from './ui/BrandLogo';
 
-const links = [{label:'The product',href:'/product'},{label:'Pricing',href:'/pricing'},{label:'Try it live',href:'/live-demo'}];
+const links = [{label:'The product',href:'/product'},{label:'Pricing',href:'/pricing'},{label:'Demo previews',href:'/live-demo'}];
 const resources = [{title:'Our approach',href:'/case-studies',body:'What we measure and how we work.'},{title:'Policies & information',href:'/policies',body:'The details, in plain language.'}];
 export default function Navbar({isMenuOpen,setIsMenuOpen,closeMenu}) {
   const {pathname} = useLocation();
