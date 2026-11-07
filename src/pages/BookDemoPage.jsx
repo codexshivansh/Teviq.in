@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { isValidBookingPhone, submitDemoBooking } from '../lib/demoBooking';
 import { motion } from 'framer-motion';
 import { Link } from '../lib/router';
 import { FiArrowRight, FiArrowUpRight, FiCheck } from 'react-icons/fi';
 import { fadeInUp, stagger } from '../lib/animations';
 
 function BookDemoPage() {
+  const submissionPending = useRef(false);
   const [submitStatus, setSubmitStatus] = useState('idle');
   const [submitMessage, setSubmitMessage] = useState('');
   const platformOptions = ['Shopify', 'WooCommerce', 'Custom', 'Other'];
@@ -23,7 +25,7 @@ function BookDemoPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (isSubmitting || isSuccess) return;
+    if (submissionPending.current || isSuccess) return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -38,7 +40,6 @@ function BookDemoPage() {
       message: String(formData.get('message') || '').trim(),
     };
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^[+()\-\s\d]{7,20}$/;
 
     if (!values.name || !values.email || !values.phone || !values.brand) {
       setSubmitStatus('error');
@@ -52,7 +53,7 @@ function BookDemoPage() {
       return;
     }
 
-    if (!phonePattern.test(values.phone)) {
+    if (!isValidBookingPhone(values.phone)) {
       setSubmitStatus('error');
       setSubmitMessage('Please enter a valid phone number.');
       return;
@@ -92,27 +93,18 @@ function BookDemoPage() {
       message: values.message,
     };
 
+    submissionPending.current = true;
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json();
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Unable to submit demo request.');
-      }
+      await submitDemoBooking(payload);
 
       setSubmitStatus('success');
       setSubmitMessage("Thank you! We've received your demo request. Our team will follow up with the next steps.");
       form.reset();
     } catch (error) {
       setSubmitStatus('error');
-      setSubmitMessage('Something went wrong while sending your request. Please try again or email us at helloteviq@gmail.com.');
+      setSubmitMessage('We could not confirm whether your request was received. Your details are still here. Please email helloteviq@gmail.com to check before submitting again.');
+    } finally {
+      submissionPending.current = false;
     }
   };
 

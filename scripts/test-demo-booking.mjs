@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { isValidBookingPhone, submitDemoBooking } from '../src/lib/demoBooking.js';
+for (const bad of ['-------', '((((((((', '123456', '1234567890123456', 'phone12345678']) assert.equal(isValidBookingPhone(bad),false);
+for (const good of ['+91 98765 43210', '(202) 555-0123']) assert.equal(isValidBookingPhone(good),true);
+let calls=0;
+const response=(ok,success)=>async()=>{calls++;return {ok,json:async()=>({success})};};
+await submitDemoBooking({name:'Synthetic'}, {fetchImpl:response(true,true)});
+for(const [ok,success] of [[false,true],[true,false],[true,'true'],[true,null]]) await assert.rejects(submitDemoBooking({}, {fetchImpl:response(ok,success)}));
+assert.equal(calls,5,'No automatic resubmission');
+await assert.rejects(submitDemoBooking({}, {timeoutMs:10,fetchImpl:async(_url,{signal})=>({ok:true,json:()=>new Promise((_,reject)=>signal.addEventListener('abort',()=>reject(new Error('stalled body')),{once:true}))})}));
+console.log('PASS phone validation, strict success, request-body timeout and no automatic retry; no real enquiry sent');
