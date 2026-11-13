@@ -25,7 +25,7 @@ export default function Pricing({ page = false }) {
         <div className="plan-channel-badges" aria-label={`${plan.name} channels`}>
           {plan.channels.map((channel,i) => { const { label, style, Icon }=channelBadges[i]; return <div key={channel} className={`plan-channel-badge badge-${style}`}><span className="channel-badge-symbol" aria-hidden="true">{Icon ? <Icon /> : <b>www</b>}</span><span>{label}</span></div>; })}
         </div>
-        <Link to="/book-demo" className={selected === index ? 'button-violet' : 'button-outline'}>Choose {plan.name} <FiArrowUpRight /></Link>
+        {(import.meta.env.MODE !== 'production' && import.meta.env.VITE_BILLING_TEST_ENABLED === 'true') ? <a href={`${import.meta.env.VITE_DASHBOARD_URL || 'https://dashboard.teviq.in'}/billing?plan=${plan.name.toLowerCase()}`} className={selected === index ? 'button-violet' : 'button-outline'}>Try {plan.name} checkout <FiArrowUpRight /></a> : <Link to="/book-demo" className={selected === index ? 'button-violet' : 'button-outline'}>Choose {plan.name} <FiArrowUpRight /></Link>}
         <div className="plan-features-heading">WHAT'S INCLUDED</div><ul>{plan.features.map(feature => <li key={feature}><FiCheck />{feature}</li>)}</ul>
       </Reveal>)}</div>
       <Reveal className="pricing-notes"><p>Standard prices · Per store · Billed monthly</p><p>Applicable WhatsApp message charges may be separate from your Teviq plan. <Link to="/policies/pricing-and-plans">View plan terms <FiArrowUpRight /></Link></p></Reveal>

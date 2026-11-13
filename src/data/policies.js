@@ -1,4 +1,5 @@
-export const policyLastUpdated = '1 November 2026';
+const autopayPreview = (import.meta.env.MODE !== 'production' && import.meta.env.VITE_BILLING_TEST_ENABLED === 'true');
+export const policyLastUpdated = autopayPreview ? '13 November 2026' : '1 November 2026';
 
 export const publicPolicies = [
   {
@@ -70,3 +71,14 @@ export const publicPolicies = [
 export const policyBySlug = Object.fromEntries(
   publicPolicies.map((policy) => [policy.slug, policy]),
 );
+
+// Preview copy becomes public only alongside the tested subscription deployment.
+if (autopayPreview) {
+  const trial = 'Test subscription flow: your 72-hour trial starts when you start setup. The dashboard shows its exact end time and first scheduled monthly charge. Authorize autopay to continue after the trial. Payment-method authorization charges, if applicable, are shown at checkout. Trial usage limits apply.';
+  const cancellation = 'Cancel autopay from Plans & payment before the displayed trial deadline if you do not want the first subscription charge. Cancellation must be confirmed by the gateway. Your remaining trial or already-paid access keeps its original expiry. If cancellation is pending or a debit has already begun, contact support; clicking Cancel does not reverse an existing payment.';
+  for (const policy of publicPolicies) {
+    if (policy.slug === 'subscription-cancellation') policy.paragraphs = [cancellation];
+    if (policy.slug === 'refund-policy') policy.paragraphs = [trial, 'Contact support for failed setup, duplicate charges or a charge after a cancellation request. These require payment review; no automatic refund is promised by this test flow.'];
+    if (policy.slug === 'pricing-and-plans') policy.paragraphs = [policy.paragraphs[0], trial, cancellation];
+  }
+}

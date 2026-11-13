@@ -423,6 +423,10 @@ export const steps = [
 ];
 
 export const faqs = [
+  ...((import.meta.env.MODE !== 'production' && import.meta.env.VITE_BILLING_TEST_ENABLED === 'true') ? [{
+    question: 'How do the trial and autopay work?',
+    answer: 'In the test subscription flow, start a 72-hour trial and authorize monthly autopay. Your dashboard shows the exact first-charge deadline and amount. Cancel through Plans & payment before that deadline and check for cancellation confirmation to stop the scheduled charge. Your remaining trial time is preserved. A debit already in progress requires support review.'
+  }] : []),
   {
     question: 'Is Teviq for B2B or D2C businesses?',
     answer: 'Both. Teviq uses your product, service and policy knowledge to help with customer support, enquiries and sales objections. B2B teams can explain service scope and onboarding; D2C teams can answer product, delivery and return questions. Shopify-specific features apply to connected stores, not every business.',
